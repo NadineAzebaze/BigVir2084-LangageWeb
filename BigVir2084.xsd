@@ -9,6 +9,16 @@
         </xs:sequence>
     </xs:complexType>
 
+
+    <xs:complexType name="MEDECINS">
+        <xs:sequence>
+            <xs:element name="Nom" type="xs:string"/>
+            <xs:element name="Prenom" type="xs:string"/>
+            <xs:element name="domaine" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:integer"/>
+    </xs:complexType>
+
 <xs:complexType name="CITOYEN">
     <xs:sequence>
         <xs:element name="informationsPersonelles" type="IP"/>
@@ -20,7 +30,7 @@
 
 <xs:complexType name="AM">
     <xs:sequence>
-        <xs:element name="hospitalisations" type="HOSPITALISATION" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="hospitalisations" type="HOSPITALISATIONS" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="tests" type="TESTS" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="consultations" type="CONSULTATIONS" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="statut" type="STATUT"/>
@@ -38,8 +48,41 @@
     <xs:sequence>
         <xs:element name="Nom" type="xs:string"/>
         <xs:element name="Prenom" type="xs:string"/>
-        <xs:element name="date de naissance" type="xs:date"/>
+        <xs:element name="dateDeNaissance" type="xs:date"/>
         <xs:element name="poids" type="xs:integer"/>
         <xs:element name="age" type="xs:integer"/>
     </xs:sequence>
 </xs:complexType>
+
+<xs:complexType name="ETABLISSEMENTS">
+    <xs:sequence>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EVENEMENTS">
+    <xs:sequence>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TESTS">
+    <xs:sequence>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="HOSPITALISATIONS">
+    <xs:sequence>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CONSULTATIONS">
+    <xs:sequence>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="STATUT">
+    <xs:sequence>
+    </xs:sequence>
+</xs:complexType>
+
+
+</xs:schema>
