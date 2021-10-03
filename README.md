@@ -1,0 +1,2 @@
+# BigVir2084-LangageWeb
+L'application BigVir2084 est destinée à permettre la surveillance de la santé publique et la recherche de contacts par les instances gouvernementales sur les données liées à BigVir afin d'alerter les citoyens sur l'épidémie de BigVir et les risques d'infection, et de prendre des décisions gouvernementales sur l'isolement des citoyens infectés ou suspects, le confinement de la population, les conditions d'ouverture ou de fermeture des établissements recevant du public, et les conditions ou interdictions de rassemblement public ou privé également.
