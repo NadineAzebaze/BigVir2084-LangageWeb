@@ -1,4 +1,26 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 
-<xs:element name="CITOYENS" type="citoyens"/>
+<xs:element name="citoyens" type="CITOYENS"/>
+    <xs:complexType name="CITOYENS">
+        <xs:sequence>
+            <xs:element name="citoyen" type="CITOYEN" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+<xs:complexType name="CITOYEN">
+    <xs:sequence>
+        <xs:element name="antecedentsMedicaux" type="AM"/>
+        <xs:element name="historiqueSocial" type="HS"/>
+    </xs:sequence>
+    <xs:attribute name="identifiant" type='xs:integer'/>
+</xs:complexType>
+
+<xs:complexType name="AM">
+    <xs:sequence>
+        <xs:element name="hospitalisations" type="HOSPITALISATION" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="test" type="TESTS" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="consultation" type="CONSULTATIONS" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="statut" type="STATUT"/>
+    </xs:sequence>
+</xs:complexType>
