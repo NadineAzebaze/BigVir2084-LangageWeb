@@ -56,12 +56,26 @@
 
 <xs:complexType name="ETABLISSEMENTS">
     <xs:sequence>
+        <xs:element name="etablissement" type="ETABLISSEMENT" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
+    <xs:attribute name="clé" type="xs:ID"/>
+</xs:complexType>
+<xs:complexType name="ETABLISSEMENT">
+    <xs:sequence>
+    </xs:sequence>
+    <xs:attribute name="clé" type="xs:ID"/>
 </xs:complexType>
 
 <xs:complexType name="EVENEMENTS">
     <xs:sequence>
+        <xs:element name="evenement" type="EVENEMENT" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
+    <xs:attribute name="clé" type="xs:ID"/>
+</xs:complexType>
+<xs:complexType name="EVENEMENT">
+    <xs:sequence>
+    </xs:sequence>
+    <xs:attribute name="clé" type="xs:ID"/>
 </xs:complexType>
 
 <xs:complexType name="TESTS">
