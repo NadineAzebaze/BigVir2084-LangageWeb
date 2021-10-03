@@ -21,7 +21,7 @@
 
 <xs:complexType name="CITOYEN">
     <xs:sequence>
-        <xs:element name="informationsPersonelles" type="IP"/>
+        <xs:element name="informationsPersonnelles" type="IP"/>
         <xs:element name="antecedentsMedicaux" type="AM"/>
         <xs:element name="historiqueSocial" type="HS"/>
     </xs:sequence>
@@ -80,16 +80,22 @@
 
 <xs:complexType name="TESTS">
     <xs:sequence>
+        <xs:element name="resultat" type="xs:string"/>
+        <xs:element name='intitule' type='xs:string'/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="HOSPITALISATIONS">
     <xs:sequence>
+        <xs:element name="maladie" type="xs:string"/>
+        <xs:element name="dateEntree" type="xs:date"/>
+        <xs:element name="dateSortie" type="xs:date"/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="CONSULTATIONS">
     <xs:sequence>
+        <xs:element name="date" type="xs:date"/>
     </xs:sequence>
 </xs:complexType>
 

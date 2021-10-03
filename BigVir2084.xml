@@ -4,18 +4,30 @@
        xsi:noNamespaceSchemaLocation="BigVir2084.xsd">
 
        <citoyen>
-           <informationsPersonelles>
+           <informationsPersonnelles>
                <Nom></Nom>
                <Prenom></Prenom>
                <dateDeNaissance>2001-04-29</dateDeNaissance>
                <poids>65</poids>
                <age>20</age>
-           </informationsPersonelles>
+           </informationsPersonnelles>
            
            <antecedentsMedicaux>
-               <hospitalisations />
-               <tests />
-               <consultations />
+               <hospitalisations>
+                   <maladie></maladie>
+                   <dateEntree>2021-09-30</dateEntree>
+                   <dateSortie>2021-10-03</dateSortie>
+               </hospitalisations>
+
+               <tests>
+                   <resultat></resultat>
+                   <intitule></intitule>
+               </tests>
+
+               <consultations>
+                   <date>2021-09-29</date>
+               </consultations>
+
                <statut>
                    <statutsInfection />
                    <statutsImmunisation />
@@ -24,7 +36,7 @@
            </antecedentsMedicaux>
 
            <historiqueSocial>
-               <etablissements>
+               <etablissements >
                    <etablissement />
                </etablissements>
 
