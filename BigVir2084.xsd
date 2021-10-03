@@ -33,7 +33,7 @@
         <xs:element name="hospitalisations" type="HOSPITALISATIONS" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="tests" type="TESTS" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="consultations" type="CONSULTATIONS" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="statut" type="STATUT"/>
+        <xs:element name="statut" type="STATUTS"/>
     </xs:sequence>
 </xs:complexType>
 
@@ -93,9 +93,21 @@
     </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="STATUT">
+<xs:complexType name="STATUTS">
     <xs:sequence>
+        <xs:element name="statutsInfection" type="INFECTION"/>
+        <xs:element name="statutsImmunisation" type="IMMUNISATION"/>
+        <xs:element name="statutsVaccination" type="VACCINATION"/>
     </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="INFECTION
+"></xs:complexType>
+
+<xs:complexType name="IMMUNISATION">
+</xs:complexType>
+
+<xs:complexType name="VACCINATION">
 </xs:complexType>
 
 
