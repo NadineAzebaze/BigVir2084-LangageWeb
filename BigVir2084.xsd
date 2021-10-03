@@ -5,11 +5,13 @@
     <xs:complexType name="CITOYENS">
         <xs:sequence>
             <xs:element name="citoyen" type="CITOYEN" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="medecin" type="MEDECINS" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
 <xs:complexType name="CITOYEN">
     <xs:sequence>
+        <xs:element name="informationsPersonelles" type="IP"/>
         <xs:element name="antecedentsMedicaux" type="AM"/>
         <xs:element name="historiqueSocial" type="HS"/>
     </xs:sequence>
@@ -19,8 +21,25 @@
 <xs:complexType name="AM">
     <xs:sequence>
         <xs:element name="hospitalisations" type="HOSPITALISATION" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="test" type="TESTS" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="consultation" type="CONSULTATIONS" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="tests" type="TESTS" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="consultations" type="CONSULTATIONS" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="statut" type="STATUT"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="HS">
+    <xs:sequence>
+        <xs:element name="etablissements" type="ETABLISSEMENTS"/>
+        <xs:element name="evenements" type="EVENEMENTS"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IP">
+    <xs:sequence>
+        <xs:element name="Nom" type="xs:string"/>
+        <xs:element name="Prenom" type="xs:string"/>
+        <xs:element name="date de naissance" type="xs:date"/>
+        <xs:element name="poids" type="xs:integer"/>
+        <xs:element name="age" type="xs:integer"/>
     </xs:sequence>
 </xs:complexType>
