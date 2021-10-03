@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<citoyens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="BigVir2084.xsd">
+
+       <citoyen>
+           <informationsPersonelles>
+               <Nom></Nom>
+               <Prenom></Prenom>
+               <dateDeNaissance>2001-04-29</dateDeNaissance>
+               <poids>65</poids>
+               <age>20</age>
+           </informationsPersonelles>
+           
+           <antecedentsMedicaux>
+               <hospitalisations />
+               <tests />
+               <consultations />
+               <statut>
+                   <statutsInfection />
+                   <statutsImmunisation />
+                   <statutsVaccination />
+               </statut>
+           </antecedentsMedicaux>
+
+           <historiqueSocial>
+               <etablissements>
+                   <etablissement />
+               </etablissements>
+
+               <evenements>
+                   <evenement />
+               </evenements>
+           </historiqueSocial>
+
+       </citoyen>
+
+
+       <medecin id="1">
+           <Nom></Nom>
+           <Prenom></Prenom>
+           <domaine></domaine>
+       </medecin>
+
+</citoyens>
