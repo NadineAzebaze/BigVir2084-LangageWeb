@@ -13,6 +13,16 @@
 	    <xs:selector xpath="CITOYEN"/>
 	    <xs:field xpath="@id"/>
     </xs:key>
+
+    <xs:key name="keysocial">
+	    <xs:selector xpath="CITOYEN/HS"/>
+	    <xs:field xpath="@clé"/>
+    </xs:key>
+
+    <xs:key name="keymedical">
+	    <xs:selector xpath="CITOYEN/AM"/>
+	    <xs:field xpath="@idref"/>
+    </xs:key>
 </xs:element>
 
 
@@ -30,7 +40,7 @@
             <xs:element name="domaine" type="xs:string"/>
             <xs:element name="listePatients" type="LP"/>
         </xs:sequence>
-        <xs:attribute name="id" type="xs:integer" use="required"/>
+        <xs:attribute name="idM" type="xs:integer" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="LP">
@@ -45,7 +55,7 @@
         <xs:element name="antecedentsMedicaux" type="AM"/>
         <xs:element name="historiqueSocial" type="HS"/>
     </xs:sequence>
-    <xs:attribute name="identifiant" type='xs:integer' use="required"/>
+    <xs:attribute name="id" type='xs:integer' use="required"/>
 </xs:complexType>
 
 <xs:complexType name="AM">
@@ -55,13 +65,15 @@
         <xs:element name="consultations" type="CONSULTATIONS" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="statut" type="STATUTS"/>
     </xs:sequence>
+    <xs:attribute name="idref" type="xs:integer" use="required"/>
 </xs:complexType>
 
 <xs:complexType name="HS">
     <xs:sequence>
-        <xs:element name="etablissements" type="ETABLISSEMENTS"/>
-        <xs:element name="evenements" type="EVENEMENTS"/>
+        <xs:element name="etablissements" type="ETABLISSEMENTS" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="evenements" type="EVENEMENTS" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
+    <xs:attribute name="clé" type="xs:ID" use="required"></xs:attribute>
 </xs:complexType>
 
 <xs:complexType name="IP">
@@ -78,7 +90,6 @@
     <xs:sequence>
         <xs:element name="etablissement" type="ETABLISSEMENT" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
-    <xs:attribute name="clé" type="xs:ID"/>
 </xs:complexType>
 <xs:complexType name="ETABLISSEMENT">
     <xs:sequence>
@@ -86,7 +97,6 @@
         <xs:element ref="date"/>
         <xs:element ref="affluence"/>
     </xs:sequence>
-    <xs:attribute name="clé" type="xs:ID"/>
 </xs:complexType>
 
 <xs:complexType name="EVENEMENTS">
@@ -101,7 +111,6 @@
         <xs:element ref="affluence"/>
         <xs:element ref="adresse"/>
     </xs:sequence>
-    <xs:attribute name="clé" type="xs:ID"/>
 </xs:complexType>
 
 <xs:complexType name="TESTS">
