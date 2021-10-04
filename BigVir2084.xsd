@@ -10,10 +10,16 @@
     </xs:complexType>
 
 
+<xs:element name="Nom" type="xs:string"/>
+<xs:element name="Prenom" type="xs:string"/>
+<xs:element name="adresse" type="xs:string"/>
+<xs:element name="date" type="xs:date"/>
+<xs:element name="affluence" type="xs:integer"/>
+
     <xs:complexType name="MEDECINS">
         <xs:sequence>
-            <xs:element name="Nom" type="xs:string"/>
-            <xs:element name="Prenom" type="xs:string"/>
+            <xs:element ref="Nom"/>
+            <xs:element ref="Prenom"/>
             <xs:element name="domaine" type="xs:string"/>
         </xs:sequence>
         <xs:attribute name="id" type="xs:integer" use="required"/>
@@ -46,8 +52,8 @@
 
 <xs:complexType name="IP">
     <xs:sequence>
-        <xs:element name="Nom" type="xs:string"/>
-        <xs:element name="Prenom" type="xs:string"/>
+        <xs:element ref="Nom"/>
+        <xs:element ref="Prenom"/>
         <xs:element name="dateDeNaissance" type="xs:date"/>
         <xs:element name="poids" type="xs:integer"/>
         <xs:element name="age" type="xs:integer"/>
@@ -62,6 +68,9 @@
 </xs:complexType>
 <xs:complexType name="ETABLISSEMENT">
     <xs:sequence>
+        <xs:element ref="adresse"/>
+        <xs:element ref="date"/>
+        <xs:element ref="affluence"/>
     </xs:sequence>
     <xs:attribute name="clé" type="xs:ID"/>
 </xs:complexType>
@@ -74,9 +83,9 @@
 </xs:complexType>
 <xs:complexType name="EVENEMENT">
     <xs:sequence>
-        <xs:element name="adresse" type="xs:string"/>
-        <xs:element name="date" type="xs:date"/>
-        <xs:element name="affluence" type="xs:integer"/>
+        <xs:element ref="date"/>
+        <xs:element ref="affluence"/>
+        <xs:element ref="adresse"/>
     </xs:sequence>
     <xs:attribute name="clé" type="xs:ID"/>
 </xs:complexType>
