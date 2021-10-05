@@ -77,7 +77,7 @@
         <xs:element name="etablissements" type="ETABLISSEMENTS" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="evenements" type="EVENEMENTS" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
-    <xs:attribute name="clé" type="xs:ID" use="required"></xs:attribute>
+    <xs:attribute name="clé" type="xs:integer" use="required"></xs:attribute>
 </xs:complexType>
 
 <xs:complexType name="IP">
