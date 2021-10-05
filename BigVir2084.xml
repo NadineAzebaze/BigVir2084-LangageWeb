@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<BigVir xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="BigVir2084.xsd">
+
+<BigVir xmlns:vir="http://mynamespace.fr/myvocabulary#"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://mynamespace.fr/myvocabulary# BigVir2084.xsd">
 
        <agenceGouvernement>
            <agents>
                <citoyen id="1"/>
-               <medecin clé="1">
+               <medecin clé="1"/>
                    <listePatients></listePatients>
                </medecin>
            </agents>
@@ -14,18 +16,7 @@
        </agenceGouvernement>
 
        <ObservatoireMondial>
-            <citoyen id="1">
-                <informationsPersonnelles>
-                    <Nom></Nom>
-                    <Prenom></Prenom>
-                    <dateDeNaissance></dateDeNaissance>
-                    <poids></poids>
-                    <age></age>
-                </informationsPersonnelles>
-                <antecedentsMedicaux>
-                    <consultations></consultations>
-                </antecedentsMedicaux>
-            </citoyen>
+            <citoyen id="1"/>
             <lieu refeta="1">
                 <affluence>1</affluence>
                 <adresse></adresse>
@@ -38,6 +29,7 @@
        </ObservatoireMondial>
 
        <citoyen id="1">
+
            <informationsPersonnelles>
                <Nom></Nom>
                <Prenom></Prenom>
