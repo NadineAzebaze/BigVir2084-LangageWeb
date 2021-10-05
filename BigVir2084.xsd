@@ -15,11 +15,11 @@
     </xs:complexType>
 
     <xs:key name="keycitoyen">
-	    <xs:selector xpath="vir:citoyen"/>
+	    <xs:selector xpath="citoyen"/>
 	    <xs:field xpath="@id"/>
     </xs:key>
 
-    <xs:keyref name="keymedecin" refer="keycitoyen">
+    <xs:keyref name="keymedecin" refer="vir:keycitoyen">
 	    <xs:selector xpath="agenceGouvernement/agents/medecin"/>
 	    <xs:field xpath="@clé"/>
     </xs:keyref>
@@ -34,12 +34,12 @@
 	    <xs:field xpath="@idevent"/>
     </xs:key>
 
-    <xs:keyref name="keyetablissement" refer="keylieu">
+    <xs:keyref name="keyetablissement" refer="vir:keylieu">
         <xs:selector xpath="citoyen/historiqueSocial/etablissements/etablissement"/>
         <xs:field xpath="@refeta"></xs:field>
     </xs:keyref>
 
-    <xs:keyref name="keyevenement" refer="keyevent">
+    <xs:keyref name="keyevenement" refer="vir:keyevent">
         <xs:selector xpath="citoyen/historiqueSocial/evenements/evenement"/>
         <xs:field xpath="@refevent"></xs:field>
     </xs:keyref>
@@ -87,37 +87,37 @@
 
 <xs:complexType name="MEDECIN">
     <xs:sequence>
-        <xs:element name="listePatients" type="LC"/>
+        <xs:element name="listePatients" type="vir:LC"/>
     </xs:sequence>
     <xs:attribute name="clé" type="xs:integer" use="required"/>
 </xs:complexType>
 <xs:complexType name="LC">
     <xs:sequence>
-        <xs:element name="patient" type="CITOYEN" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="patient" type="vir:CITOYEN" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="OM">
     <xs:sequence>
-        <xs:element name="citoyen" type="CITOYEN" maxOccurs="unbounded"/>
-        <xs:element name="lieu" type="LIEU" maxOccurs="unbounded"/>
-        <xs:element name="event" type="EVENT" maxOccurs="unbounded"/>
+        <xs:element name="citoyen" type="vir:CITOYEN" maxOccurs="unbounded"/>
+        <xs:element name="lieu" type="vir:LIEU" maxOccurs="unbounded"/>
+        <xs:element name="event" type="vir:EVENT" maxOccurs="unbounded"/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="LIEU">
     <xs:sequence>
-        <xs:element ref="affluence"/>
-        <xs:element ref="adresse"/>
+        <xs:element ref="vir:affluence"/>
+        <xs:element ref="vir:adresse"/>
     </xs:sequence>
     <xs:attribute name="refeta" type="xs:integer" use="required"/>
 </xs:complexType>
 
 <xs:complexType name="EVENT">
     <xs:sequence>
-        <xs:element ref="date"/>
-        <xs:element ref="affluence"/>
-        <xs:element ref="adresse"/>
+        <xs:element ref="vir:date"/>
+        <xs:element ref="vir:affluence"/>
+        <xs:element ref="vir:adresse"/>
     </xs:sequence>
     <xs:attribute name="idevent" type="xs:integer" use="required"/>
 </xs:complexType>
@@ -125,17 +125,17 @@
 
 <xs:complexType name="AM">
     <xs:sequence>
-        <xs:element name="hospitalisations" type="HOSPITALISATIONS" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="tests" type="TESTS" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="consultations" type="CONSULTATIONS" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="statut" type="STATUTS"/>
+        <xs:element name="hospitalisations" type="vir:HOSPITALISATIONS" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="tests" type="vir:TESTS" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="consultations" type="vir:CONSULTATIONS" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="statut" type="vir:STATUTS"/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="HS">
     <xs:sequence>
-        <xs:element name="etablissement" type="ETABLISSEMENT" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="evenement" type="EVENEMENT" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="etablissement" type="vir:ETABLISSEMENT" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="evenement" type="vir:EVENEMENT" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
 </xs:complexType>
 
@@ -164,15 +164,15 @@
 
 <xs:complexType name="CONSULTATIONS">
     <xs:sequence>
-        <xs:element ref="date"/>
+        <xs:element ref="vir:date"/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="STATUTS">
     <xs:sequence>
-        <xs:element name="statutsInfection" type="INFECTION"/>
-        <xs:element name="statutsImmunisation" type="IMMUNISATION"/>
-        <xs:element name="statutsVaccination" type="VACCINATION"/>
+        <xs:element name="statutsInfection" type="vir:INFECTION"/>
+        <xs:element name="statutsImmunisation" type="vir:IMMUNISATION"/>
+        <xs:element name="statutsVaccination" type="vir:VACCINATION"/>
     </xs:sequence>
 </xs:complexType>
 
