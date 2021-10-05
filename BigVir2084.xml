@@ -3,7 +3,7 @@
 <citoyens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="BigVir2084.xsd">
 
-       <citoyen>
+       <citoyen id="1">
            <informationsPersonnelles>
                <Nom></Nom>
                <Prenom></Prenom>
@@ -12,7 +12,7 @@
                <age>20</age>
            </informationsPersonnelles>
            
-           <antecedentsMedicaux>
+           <antecedentsMedicaux idref="1">
                <hospitalisations>
                    <maladie></maladie>
                    <dateEntree>2021-09-30</dateEntree>
@@ -29,29 +29,45 @@
                </consultations>
 
                <statut>
-                   <statutsInfection />
-                   <statutsImmunisation />
-                   <statutsVaccination />
+                   <statutsInfection>
+                       <infecté></infecté>
+                   </statutsInfection>
+                   <statutsImmunisation>
+                       <contaminable></contaminable>
+                   </statutsImmunisation> 
+                   <statutsVaccination>
+                       <vacciné></vacciné>
+                   </statutsVaccination>
                </statut>
            </antecedentsMedicaux>
 
-           <historiqueSocial>
+           <historiqueSocial clé="1">
                <etablissements >
-                   <etablissement />
+                   <etablissement>
+                       <adresse></adresse>
+                       <date>2021-10-05</date>
+                       <affluence>1</affluence>
+                   </etablissement>
                </etablissements>
 
                <evenements>
-                   <evenement />
+                   <evenement>
+                       <date>2021-09-22</date>
+                       <affluence>2</affluence>
+                       <adresse></adresse>
+                   </evenement>
                </evenements>
+            
            </historiqueSocial>
 
        </citoyen>
 
 
-       <medecin id="1">
+       <medecin clé="1">
            <Nom></Nom>
            <Prenom></Prenom>
            <domaine></domaine>
+           <listePatients></listePatients>
        </medecin>
 
 </citoyens>
