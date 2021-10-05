@@ -20,15 +20,25 @@
 	    <xs:field xpath="@clé"/>
     </xs:keyref>
 
-    <xs:key name="keyetablissement">
-	    <xs:selector xpath="ObservatoireModial/etablissement"/>
+    <xs:key name="keylieu">
+	    <xs:selector xpath="ObservatoireModial/lieu"/>
 	    <xs:field xpath="@idetablissement"/>
     </xs:key>
 
     <xs:key name="keyevent">
-	    <xs:selector xpath="ObservatoireModial/evenement"/>
+	    <xs:selector xpath="ObservatoireModial/event"/>
 	    <xs:field xpath="@idevent"/>
     </xs:key>
+
+    <xs:keyref name="keyetablissement" refer="keylieu">
+        <xs:selector xpath="citoyen/historiqueSocial/etablissements/etablissement"/>
+        <xs:field xpath="refeta"></xs:field>
+    </xs:keyref>
+
+    <xs:keyref name="keyevenement" refer="keyevent">
+        <xs:selector xpath="citoyen/historiqueSocial/evenements/evenement"/>
+        <xs:field xpath="refevent"></xs:field>
+    </xs:keyref>
 </xs:element>
 
 
@@ -60,6 +70,17 @@
     <xs:attribute name="id" type='xs:integer' use="required"/>
 </xs:complexType>
 
+<xs:complexType name="IP">
+    <xs:sequence>
+        <xs:element ref="Nom"/>
+        <xs:element ref="Prenom"/>
+        <xs:element name="dateDeNaissance" type="xs:date"/>
+        <xs:element name="poids" type="xs:integer"/>
+        <xs:element name="age" type="xs:integer"/>
+    </xs:sequence>
+</xs:complexType>
+
+
 <xs:complexType name="MEDECIN">
     <xs:sequence>
         <xs:element name="listePatients" type="LC"/>
@@ -75,32 +96,16 @@
 <xs:complexType name="OM">
     <xs:sequence>
         <xs:element name="citoyen" type="CITOYEN" maxOccurs="unbounded"/>
-        <xs:element name="etablissements" type="ETABLISSEMENTS" maxOccurs="unbounded"/>
-        <xs:element name="evenements" type="EVENEMENTS" maxOccurs="unbounded"/>
+        <xs:element name="lieu" type="LIEU" maxOccurs="unbounded"/>
+        <xs:element name="event" type="EVENT" maxOccurs="unbounded"/>
     </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="ETABLISSEMENTS">
-    <xs:sequence>
-        <xs:element name="etablissement" type="ETABLISSEMENT" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-</xs:complexType>
-<xs:complexType name="ETABLISSEMENT">
-    <xs:sequence>
-        <xs:element ref="adresse"/>
-        <xs:element ref="date"/>
-        <xs:element ref="affluence"/>
-        <xs:element name="listeCitoyens" type="LC"/>
-    </xs:sequence>
-    <xs:attribute name="idetablissement" type="xs:integer" use="required"/>
+<xs:complexType name="LIEU">
+    <xs:attribute name="refeta" type="xs:integer" use="required"/>
 </xs:complexType>
 
-<xs:complexType name="EVENEMENTS">
-    <xs:sequence>
-        <xs:element name="evenement" type="EVENEMENT" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-</xs:complexType>
-<xs:complexType name="EVENEMENT">
+<xs:complexType name="EVENT">
     <xs:sequence>
         <xs:element ref="date"/>
         <xs:element ref="affluence"/>
@@ -109,10 +114,6 @@
     <xs:attribute name="idevent" type="xs:integer" use="required"/>
 </xs:complexType>
 
-
-
-        
-  
 
 <xs:complexType name="AM">
     <xs:sequence>
@@ -125,22 +126,22 @@
 
 <xs:complexType name="HS">
     <xs:sequence>
-        <xs:element name="etablissements" type="ETABLISSEMENTS" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="evenements" type="EVENEMENTS" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="etablissement" type="ETABLISSEMENT" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="evenement" type="EVENEMENT" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
 </xs:complexType>
 
-
-<xs:complexType name="IP">
+<xs:complexType name="ETABLISSEMENT">
+    <xs:attribute name="refeta" type="xs:integer" use="required"/>
+</xs:complexType>
+<xs:complexType name="EVENEMENT">
     <xs:sequence>
-        <xs:element ref="Nom"/>
-        <xs:element ref="Prenom"/>
-        <xs:element name="dateDeNaissance" type="xs:date"/>
-        <xs:element name="poids" type="xs:integer"/>
-        <xs:element name="age" type="xs:integer"/>
+        <xs:element ref="date"/>
+        <xs:element ref="affluence"/>
+        <xs:element ref="adresse"/>
     </xs:sequence>
+    <xs:attribute name="refevent" type="xs:integer" use="required"/>
 </xs:complexType>
-
 
 
 <xs:complexType name="TESTS">
