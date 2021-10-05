@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<citoyens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<BigVir xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="BigVir2084.xsd">
+
+       <agenceGouvernement>
+           <agents>
+               <citoyen id="1"/>
+               <medecin clé="1">
+                   <listePatients></listePatients>
+               </medecin>
+           </agents>
+
+       </agenceGouvernement>
+
+       <ObservatoireMondial>
+            <citoyen id="1">
+                <informationsPersonnelles>
+                    <Nom></Nom>
+                    <Prenom></Prenom>
+                    <dateDeNaissance></dateDeNaissance>
+                    <poids></poids>
+                    <age></age>
+                </informationsPersonnelles>
+                <antecedentsMedicaux>
+                    <consultations></consultations>
+                </antecedentsMedicaux>
+            </citoyen>
+            <lieu refeta="1">
+                <affluence>1</affluence>
+                <adresse></adresse>
+            </lieu>
+            <event idevent="1">
+                <date></date>
+                <affluence>2</affluence>
+                <adresse></adresse>
+            </event>
+       </ObservatoireMondial>
 
        <citoyen id="1">
            <informationsPersonnelles>
@@ -12,7 +46,7 @@
                <age>20</age>
            </informationsPersonnelles>
            
-           <antecedentsMedicaux idref="1">
+           <antecedentsMedicaux>
                <hospitalisations>
                    <maladie></maladie>
                    <dateEntree>2021-09-30</dateEntree>
@@ -41,33 +75,12 @@
                </statut>
            </antecedentsMedicaux>
 
-           <historiqueSocial clé="1">
-               <etablissements >
-                   <etablissement>
-                       <adresse></adresse>
-                       <date>2021-10-05</date>
-                       <affluence>1</affluence>
-                   </etablissement>
-               </etablissements>
+           <historiqueSocial>
+               <etablissement refeta="1" />
 
-               <evenements>
-                   <evenement>
-                       <date>2021-09-22</date>
-                       <affluence>2</affluence>
-                       <adresse></adresse>
-                   </evenement>
-               </evenements>
-            
+               <evenement refevent="1" />
            </historiqueSocial>
 
        </citoyen>
 
-
-       <medecin clé="1">
-           <Nom></Nom>
-           <Prenom></Prenom>
-           <domaine></domaine>
-           <listePatients></listePatients>
-       </medecin>
-
-</citoyens>
+</BigVir>

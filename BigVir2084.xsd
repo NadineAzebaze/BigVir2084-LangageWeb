@@ -32,12 +32,12 @@
 
     <xs:keyref name="keyetablissement" refer="keylieu">
         <xs:selector xpath="citoyen/historiqueSocial/etablissements/etablissement"/>
-        <xs:field xpath="refeta"></xs:field>
+        <xs:field xpath="@refeta"></xs:field>
     </xs:keyref>
 
     <xs:keyref name="keyevenement" refer="keyevent">
         <xs:selector xpath="citoyen/historiqueSocial/evenements/evenement"/>
-        <xs:field xpath="refevent"></xs:field>
+        <xs:field xpath="@refevent"></xs:field>
     </xs:keyref>
 </xs:element>
 
