@@ -1,17 +1,21 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://mynamespace.fr/myvocabulary#"
+    xmlns:vir="http://mynamespace.fr/myvocabulary#"
+    elementFormDefault="qualified"
+    attributeFormDefault="qualified"
+>
 
 <xs:element name="BigVir">
     <xs:complexType >
         <xs:sequence>
-            <xs:element name="agenceGouvernement" type="AG"/>
-            <xs:element name="ObservatoireMondial" type="OM"/>
-            <xs:element name="citoyen" type="CITOYEN" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="agenceGouvernement" type="vir:AG"/>
+            <xs:element name="ObservatoireMondial" type="vir:OM"/>
+            <xs:element name="citoyen" type="vir:CITOYEN" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:key name="keycitoyen">
-	    <xs:selector xpath="citoyen"/>
+	    <xs:selector xpath="vir:citoyen"/>
 	    <xs:field xpath="@id"/>
     </xs:key>
 
@@ -50,30 +54,30 @@
 
 <xs:complexType name="AG">
     <xs:sequence>
-        <xs:element name="agents" type="AGENTS"/>
+        <xs:element name="agents" type="vir:AGENTS"/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="AGENTS">
     <xs:sequence>
-        <xs:element name="citoyen" type="CITOYEN" maxOccurs="unbounded"/>
-        <xs:element name="medecin" type="MEDECIN" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="citoyen" type="vir:CITOYEN" maxOccurs="unbounded"/>
+        <xs:element name="medecin" type="vir:MEDECIN" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="CITOYEN">
     <xs:sequence>
-        <xs:element name="informationsPersonnelles" type="IP"/>
-        <xs:element name="antecedentsMedicaux" type="AM"/>
-        <xs:element name="historiqueSocial" type="HS"/>
+        <xs:element name="informationsPersonnelles" type="vir:IP"/>
+        <xs:element name="antecedentsMedicaux" type="vir:AM"/>
+        <xs:element name="historiqueSocial" type="vir:HS"/>
     </xs:sequence>
     <xs:attribute name="id" type='xs:integer' use="required"/>
 </xs:complexType>
 
 <xs:complexType name="IP">
     <xs:sequence>
-        <xs:element ref="Nom"/>
-        <xs:element ref="Prenom"/>
+        <xs:element ref="vir:Nom"/>
+        <xs:element ref="vir:Prenom"/>
         <xs:element name="dateDeNaissance" type="xs:date"/>
         <xs:element name="poids" type="xs:integer"/>
         <xs:element name="age" type="xs:integer"/>
