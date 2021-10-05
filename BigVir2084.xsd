@@ -14,15 +14,15 @@
 	    <xs:field xpath="@id"/>
     </xs:key>
 
-    <xs:key name="keysocial">
+    <xs:keyref name="keymedecin" refer="keycitoyen">
 	    <xs:selector xpath="CITOYEN/HS"/>
 	    <xs:field xpath="@clé"/>
-    </xs:key>
+    </xs:keyref>
 
-    <xs:key name="keymedical">
+    <xs:keyref name="keyagent" refer="keycitoyen">
 	    <xs:selector xpath="CITOYEN/AM"/>
 	    <xs:field xpath="@idref"/>
-    </xs:key>
+    </xs:keyref>
 </xs:element>
 
 
@@ -40,7 +40,11 @@
             <xs:element name="domaine" type="xs:string"/>
             <xs:element name="listePatients" type="LP"/>
         </xs:sequence>
-        <xs:attribute name="idM" type="xs:integer" use="required"/>
+        <xs:attribute name="clé" type="xs:integer" use="required"/>
+    </xs:complexType>
+        
+    <xs:complexType name="AGENT">
+        <xs:attribute name="idref" type="xs:integer" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="LP">
