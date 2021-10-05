@@ -102,6 +102,10 @@
 </xs:complexType>
 
 <xs:complexType name="LIEU">
+    <xs:sequence>
+        <xs:element ref="affluence"/>
+        <xs:element ref="adresse"/>
+    </xs:sequence>
     <xs:attribute name="refeta" type="xs:integer" use="required"/>
 </xs:complexType>
 
@@ -135,11 +139,6 @@
     <xs:attribute name="refeta" type="xs:integer" use="required"/>
 </xs:complexType>
 <xs:complexType name="EVENEMENT">
-    <xs:sequence>
-        <xs:element ref="date"/>
-        <xs:element ref="affluence"/>
-        <xs:element ref="adresse"/>
-    </xs:sequence>
     <xs:attribute name="refevent" type="xs:integer" use="required"/>
 </xs:complexType>
 
