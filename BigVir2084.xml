@@ -7,10 +7,8 @@
 
        <agenceGouvernement>
            <agents>
-               <citoyen id="1"/>
-               <medecin clé="1"/>
-                   <listePatients></listePatients>
-               </medecin>
+               <agent></agent>
+               <medecin></medecin>
            </agents>
 
        </agenceGouvernement>
@@ -31,23 +29,23 @@
        <citoyen id="1">
 
            <informationsPersonnelles>
-               <Nom></Nom>
-               <Prenom></Prenom>
+               <Nom>Mervile</Nom>
+               <Prenom>Thibaut</Prenom>
                <dateDeNaissance>2001-04-29</dateDeNaissance>
-               <poids>65</poids>
+               <poids>70</poids>
                <age>20</age>
            </informationsPersonnelles>
            
            <antecedentsMedicaux>
                <hospitalisations>
-                   <maladie></maladie>
+                   <maladie>Adiabétique</maladie>
                    <dateEntree>2021-09-30</dateEntree>
                    <dateSortie>2021-10-03</dateSortie>
                </hospitalisations>
 
                <tests>
-                   <resultat></resultat>
-                   <intitule></intitule>
+                   <resultat>diabète de type1</resultat>
+                   <intitule>le taux de sucre est supérieur à 1,26g/l</intitule>
                </tests>
 
                <consultations>
@@ -56,13 +54,13 @@
 
                <statut>
                    <statutsInfection>
-                       <infecté></infecté>
+                       <saint>oui</saint>
                    </statutsInfection>
                    <statutsImmunisation>
-                       <contaminable></contaminable>
+                       <contaminable>non</contaminable>
                    </statutsImmunisation> 
                    <statutsVaccination>
-                       <vacciné></vacciné>
+                       <vacciné>oui</vacciné>
                    </statutsVaccination>
                </statut>
            </antecedentsMedicaux>
@@ -72,7 +70,51 @@
 
                <evenement refevent="1" />
            </historiqueSocial>
+       </citoyen>
 
+       <citoyen id="2">
+        <informationsPersonnelles>
+            <Nom>Joly</Nom>
+            <Prenom>Carole</Prenom>
+            <dateDeNaissance>1992-05-29</dateDeNaissance>
+            <poids>60</poids>
+            <age>29</age>
+        </informationsPersonnelles>
+        
+        <antecedentsMedicaux>
+            <hospitalisations>
+                <maladie>Covid19</maladie>
+                <dateEntree>2021-08-10</dateEntree>
+                <dateSortie>2021-08-25</dateSortie>
+            </hospitalisations>
+
+            <tests>
+                <resultat>PCR positif</resultat>
+                <intitule>présence des symptomes de covid</intitule>
+            </tests>
+
+            <consultations>
+                <date>2021-08-09</date>
+            </consultations>
+
+            <statut>
+                <statutsInfection>
+                    <infecté>oui</infecté>
+                </statutsInfection>
+                <statutsImmunisation>
+                    <contaminable>oui</contaminable>
+                </statutsImmunisation> 
+                <statutsVaccination>
+                    <vacciné>non</vacciné>
+                </statutsVaccination>
+            </statut>
+        </antecedentsMedicaux>
+
+        <historiqueSocial>
+            <etablissement refeta="2" />
+
+            <evenement refevent="2" />
+        </historiqueSocial>
        </citoyen>
 
 </BigVir>

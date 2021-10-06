@@ -69,6 +69,10 @@
     </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="agent">
+    <xs:attribute name="idA" type='xs:integer' use="required"/>
+</xs:complexType>
+
 <xs:complexType name="CITOYEN">
     <xs:sequence>
         <xs:element name="informationsPersonnelles" type="IP"/>
