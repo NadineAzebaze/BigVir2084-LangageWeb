@@ -11,12 +11,12 @@
         <xs:sequence>
             <xs:element name="agenceGouvernement" type="AG"/>
             <xs:element name="ObservatoireMondial" type="OM"/>
-            <xs:element name="citoyen" type="CITOYEN" minOccurs="0" maxOccurs="unbounded"/>
+            <!--xs:element name="citoyen" type="CITOYEN" minOccurs="0" maxOccurs="unbounded"/-->
         </xs:sequence>
     </xs:complexType>
 
     <xs:key name="keycitoyen">
-	    <xs:selector xpath="citoyen"/>
+	    <xs:selector xpath="observatoireMondial/citoyens/citoyen"/>
 	    <xs:field xpath="@id"/>
     </xs:key>
 
@@ -31,24 +31,25 @@
     </xs:keyref>
 
     <xs:key name="keylieu">
-	    <xs:selector xpath="ObservatoireModial/lieu"/>
+	    <xs:selector xpath="ObservatoireModial/lieux/lieu"/>
 	    <xs:field xpath="@idetablissement"/>
     </xs:key>
 
     <xs:key name="keyevent">
-	    <xs:selector xpath="ObservatoireModial/event"/>
+	    <xs:selector xpath="ObservatoireModial/events/event"/>
 	    <xs:field xpath="@idevent"/>
     </xs:key>
 
     <xs:keyref name="keyetablissement" refer="keylieu">
-        <xs:selector xpath="citoyen/historiqueSocial/etablissements/etablissement"/>
+        <xs:selector xpath="observatoireMondial/citoyens/citoyen/historiqueSocial/etablissements/etablissement"/>
         <xs:field xpath="@refeta"></xs:field>
     </xs:keyref>
 
     <xs:keyref name="keyevenement" refer="keyevent">
-        <xs:selector xpath="citoyen/historiqueSocial/evenements/evenement"/>
+        <xs:selector xpath="observatoireMondial/citoyens/citoyen/historiqueSocial/evenements/evenement"/>
         <xs:field xpath="@refevent"></xs:field>
     </xs:keyref>
+
 </xs:element>
 
 
@@ -57,53 +58,95 @@
 <xs:element name="adresse" type="xs:string"/>
 <xs:element name="date" type="xs:date"/>
 <xs:element name="affluence" type="xs:integer"/>
+<xs:element name="agent">
+    <xs:complexType>
+        <xs:attribute name="idA" type='xs:string' use="required"/>
+    </xs:complexType>
+</xs:element>
+<xs:element name="medecin">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="listePatients" type="LC"/>
+        </xs:sequence>
+        <xs:attribute name="clé" use="required" type="xs:string"/>
+    </xs:complexType>
+</xs:element>
+<xs:complexType name="LC">
+    <xs:sequence>
+        <xs:element ref="citoyen" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:element name="citoyen">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="informationsPersonnelles" type="IP" minOccurs="0"/>
+            <xs:element name="antecedentsMedicaux" type="AM" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="historiqueSocial" type="HS" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="id" type='xs:string' use="required"/>
+    </xs:complexType>
+</xs:element>
+
+
 
 <xs:complexType name="AG">
     <xs:sequence>
-        <xs:element name="agents" type="AGENTS"/>
+        <xs:element name="agents">
+            <xs:complexType>
+		        <xs:sequence>
+			        <xs:element maxOccurs="unbounded" ref="agent"/>
+                    <xs:element maxOccurs="unbounded" ref="medecin"/>
+		        </xs:sequence>
+	        </xs:complexType>
+        </xs:element>
     </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="AGENTS">
-    <xs:sequence>
-        <xs:element name="agent" type="AGENT" maxOccurs="unbounded"/>
-        <xs:element name="medecin" type="MEDECIN" maxOccurs="unbounded"/>
-    </xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="AGENT">
-    <xs:attribute name="idA" type='xs:integer' use="required"/>
-</xs:complexType>
-
-<xs:complexType name="MEDECIN">
-    <xs:sequence>
-        <xs:element name="listePatients" type="LC"/>
-    </xs:sequence>
-    <xs:attribute name="clé" type="xs:integer" use="required"/>
-</xs:complexType>
-<xs:complexType name="LC">
-    <xs:sequence>
-        <xs:element name="patient" type="CITOYEN" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-</xs:complexType>
 
 <xs:complexType name="OM">
     <xs:sequence>
-        <xs:element name="citoyen" type="CITOYEN" maxOccurs="unbounded"/>
+        <xs:element name="citoyens" type="CITOYENS"/>
+        <xs:element name="lieux" type="LIEUX"/>
+        <xs:element name="events" type="EVENTS"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CITOYENS">
+    <xs:sequence>
+        <xs:element  maxOccurs="unbounded" ref="citoyen"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LIEUX">
+    <xs:sequence>
         <xs:element name="lieu" type="LIEU" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="LIEU">
+    <xs:sequence>
+        <xs:element ref="affluence"/>
+        <xs:element ref="adresse"/>
+    </xs:sequence>
+    <xs:attribute name="refeta" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="EVENTS">
+    <xs:sequence>
         <xs:element name="event" type="EVENT" maxOccurs="unbounded"/>
     </xs:sequence>
 </xs:complexType>
-
-
-<xs:complexType name="CITOYEN">
+<xs:complexType name="EVENT">
     <xs:sequence>
-        <xs:element name="informationsPersonnelles" type="IP"/>
-        <xs:element name="antecedentsMedicaux" type="AM"/>
-        <xs:element name="historiqueSocial" type="HS"/>
+        <xs:element ref="date"/>
+        <xs:element ref="affluence"/>
+        <xs:element ref="adresse"/>
     </xs:sequence>
-    <xs:attribute name="id" type='xs:integer' use="required"/>
+    <xs:attribute name="idevent" type="xs:string" use="required"/>
 </xs:complexType>
+
+
+
 
 <xs:complexType name="IP">
     <xs:sequence>
@@ -114,25 +157,6 @@
         <xs:element name="age" type="xs:integer"/>
     </xs:sequence>
 </xs:complexType>
-
-
-<xs:complexType name="LIEU">
-    <xs:sequence>
-        <xs:element ref="affluence"/>
-        <xs:element ref="adresse"/>
-    </xs:sequence>
-    <xs:attribute name="refeta" type="xs:integer" use="required"/>
-</xs:complexType>
-
-<xs:complexType name="EVENT">
-    <xs:sequence>
-        <xs:element ref="date"/>
-        <xs:element ref="affluence"/>
-        <xs:element ref="adresse"/>
-    </xs:sequence>
-    <xs:attribute name="idevent" type="xs:integer" use="required"/>
-</xs:complexType>
-
 
 <xs:complexType name="AM">
     <xs:sequence>
@@ -151,10 +175,10 @@
 </xs:complexType>
 
 <xs:complexType name="ETABLISSEMENT">
-    <xs:attribute name="refeta" type="xs:integer" use="required"/>
+    <xs:attribute name="refeta" type="xs:string" use="required"/>
 </xs:complexType>
 <xs:complexType name="EVENEMENT">
-    <xs:attribute name="refevent" type="xs:integer" use="required"/>
+    <xs:attribute name="refevent" type="xs:string" use="required"/>
 </xs:complexType>
 
 

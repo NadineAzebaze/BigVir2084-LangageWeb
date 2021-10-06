@@ -8,15 +8,13 @@
 
        <agenceGouvernement>
            <agents>
-               <agent idA='1'/>
-               <medecin clé="1">
-                   <listePatients></listePatients>
-                </medecin>
+               <agent idA="1" />
+
            </agents>
 
        </agenceGouvernement>
 
-       <!--ObservatoireMondial>
+       <ObservatoireMondial>
             <citoyen id="1"/>
             <lieu refeta="1">
                 <affluence>1</affluence>
@@ -30,7 +28,6 @@
        </ObservatoireMondial>
 
        <citoyen id="1">
-
            <informationsPersonnelles>
                <Nom>Mervile</Nom>
                <Prenom>Thibaut</Prenom>
@@ -76,48 +73,47 @@
        </citoyen>
 
        <citoyen id="2">
-        <informationsPersonnelles>
-            <Nom>Joly</Nom>
-            <Prenom>Carole</Prenom>
-            <dateDeNaissance>1992-05-29</dateDeNaissance>
-            <poids>60</poids>
-            <age>29</age>
-        </informationsPersonnelles>
-        
-        <antecedentsMedicaux>
-            <hospitalisations>
-                <maladie>Covid19</maladie>
-                <dateEntree>2021-08-10</dateEntree>
-                <dateSortie>2021-08-25</dateSortie>
-            </hospitalisations>
+            <informationsPersonnelles>
+                <Nom>Joly</Nom>
+                <Prenom>Carole</Prenom>
+                <dateDeNaissance>1992-05-29</dateDeNaissance>
+                <poids>60</poids>
+                <age>29</age>
+            </informationsPersonnelles>
+            
+            <antecedentsMedicaux>
+                <hospitalisations>
+                    <maladie>Covid19</maladie>
+                    <dateEntree>2021-08-10</dateEntree>
+                    <dateSortie>2021-08-25</dateSortie>
+                </hospitalisations>
 
-            <tests>
-                <resultat>PCR positif</resultat>
-                <intitule>présence des symptomes de covid</intitule>
-            </tests>
+                <tests>
+                    <resultat>PCR positif</resultat>
+                    <intitule>présence des symptomes de covid</intitule>
+                </tests>
 
-            <consultations>
-                <date>2021-08-09</date>
-            </consultations>
+                <consultations>
+                    <date>2021-08-09</date>
+                </consultations>
 
-            <statut>
-                <statutsInfection>
-                    <infecté>oui</infecté>
-                </statutsInfection>
-                <statutsImmunisation>
-                    <contaminable>oui</contaminable>
-                </statutsImmunisation> 
-                <statutsVaccination>
-                    <vacciné>non</vacciné>
-                </statutsVaccination>
-            </statut>
-        </antecedentsMedicaux>
+                <statut>
+                    <statutsInfection>
+                        <infecté>oui</infecté>
+                    </statutsInfection>
+                    <statutsImmunisation>
+                        <contaminable>oui</contaminable>
+                    </statutsImmunisation> 
+                    <statutsVaccination>
+                        <vacciné>non</vacciné>
+                    </statutsVaccination>
+                </statut>
+            </antecedentsMedicaux>
 
-        <historiqueSocial>
-            <etablissement refeta="2" />
-
-            <evenement refevent="2" />
-        </historiqueSocial>
-       </citoyen-->
+            <historiqueSocial>
+                <etablissement refeta="2" />
+                <evenement refevent="2" />
+            </historiqueSocial>
+       </citoyen>
 
 </BigVir>
