@@ -7,8 +7,8 @@
 
             <agenceGouvernement>
                 <agents>
-                    <agent idA=""  />
-                    <medecin clé="">
+                    <agent idA="1"  />
+                    <medecin idM="">
                         <LC>
                             <patient idP="" />
                         </LC>
@@ -18,33 +18,33 @@
 
             <ObservatoireMondial>
                 <citoyens>
-                    <citoyen id="1">
+                    <citoyen idC="1">
                         <informationsPersonnelles>
-                            <Nom></Nom>
-                            <Prenom></Prenom>
-                            <dateDeNaissance></dateDeNaissance>
-                            <poids></poids>
-                            <age></age>
+                            <Nom>Mervile</Nom>
+                            <Prenom>Thibaut</Prenom>
+                            <dateDeNaissance>1992-05-29</dateDeNaissance>
+                            <poids>70</poids>
+                            <age>29</age>
                         </informationsPersonnelles>
                         <antecedentsMedicaux>
                             <hospitalisations>
                                 <maladie></maladie>
                                 <dateEntree>2021-04-04</dateEntree>
-                                <dateSortie></dateSortie>
+                                <dateSortie>2021-04-20</dateSortie>
                             </hospitalisations>
                             <tests>
-                                <resultat></resultat>
-                                <intitule></intitule>
+                                <resultat>diabète de type1</resultat>
+                                <intitule>le taux de sucre est supérieur à 1,26g/l</intitule>
                             </tests>
                             <consultations>
-                                <date></date>
+                                <date>2021-04-03</date>
                             </consultations>
                             <statut>
                                 <statutsInfection>
-                                    <infecté></infecté>
+                                    <saint></saint>
                                 </statutsInfection>
                                 <statutsImmunisation>
-                                    <contaminable></contaminable>
+                                    <immunisé></immunisé>
                                 </statutsImmunisation>
                                 <statutsVaccination>
                                     <nonVacciné></nonVacciné>
@@ -56,19 +56,88 @@
                             <evenement refevent="1" />
                         </historiqueSocial>
                     </citoyen>
+
+                    <citoyen idC="2">
+                        <informationsPersonnelles>
+                            <Nom>Joly</Nom>
+                            <Prenom>Carole</Prenom>
+                            <dateDeNaissance>1992-05-29</dateDeNaissance>
+                            <poids>60</poids>
+                            <age>29</age>
+                        </informationsPersonnelles>
+                        
+                        <antecedentsMedicaux>
+                            <hospitalisations>
+                                <maladie>Covid19</maladie>
+                                <dateEntree>2021-08-10</dateEntree>
+                                <dateSortie>2021-08-25</dateSortie>
+                            </hospitalisations>
+            
+                            <tests>
+                                <resultat>PCR positif</resultat>
+                                <intitule>présence des symptomes de covid</intitule>
+                            </tests>
+            
+                            <consultations>
+                                <date>2021-08-09</date>
+                            </consultations>
+            
+                            <statut>
+                                <statutsInfection>
+                                    <infecté></infecté>
+                                </statutsInfection>
+                                <statutsImmunisation>
+                                    <contaminable></contaminable>
+                                </statutsImmunisation> 
+                                <statutsVaccination>
+                                    <nonVacciné></nonVacciné>
+                                </statutsVaccination>
+                            </statut>
+                        </antecedentsMedicaux>
+            
+                        <historiqueSocial>
+                            <etablissement refeta="2" />
+                            <evenement refevent="2" />
+                        </historiqueSocial>
+                   </citoyen>
+
+                   <citoyen idC="3">
+                       <informationsPersonnelles>
+                           <Nom>Dylan</Nom>
+                           <Prenom>Bob</Prenom>
+                           <dateDeNaissance>1994-02-01</dateDeNaissance>
+                           <poids>80</poids>
+                           <age>27</age>
+                       </informationsPersonnelles>
+                       <antecedentsMedicaux>
+                           <hospitalisations>
+                               <maladie>Cancer</maladie>
+                               <dateEntree>2021-09-06</dateEntree>
+                               <dateSortie>2021-10-06</dateSortie>
+                           </hospitalisations>
+                           <tests>
+                               <resultat></resultat>
+                               <intitule></intitule>
+                           </tests>
+                           <statut></statut>
+                       </antecedentsMedicaux>
+                   </citoyen>
                 </citoyens>
                 
                 <lieux>
                     <lieu refeta="1">
                         <affluence>1</affluence>
-                        <adresse></adresse>
+                        <adresse>11 rue Circulaire</adresse>
+                        <ville>Lille</ville>
                     </lieu>
                 </lieux>
 
                 <events>
                     <event idevent="1">
-                        <date></date>
-                        <affluence></affluence>
+                        <date>2021-04-21</date>
+                        <affluence>1</affluence>
+                        <adresse>17 Boulevard Victor Hugo</adresse>
+                        <ville>Lille</ville>
                     </event>
                 </events>
             </ObservatoireMondial>

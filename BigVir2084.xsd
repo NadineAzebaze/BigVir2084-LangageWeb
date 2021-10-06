@@ -3,7 +3,7 @@
     targetNamespace="http://myBigVir.org/"
     xmlns="http://myBigVir.org/"
     elementFormDefault="qualified"
-    attributeFormDefault="qualified">
+    attributeFormDefault="unqualified">
 
 
 <xs:element name="BigVir">
@@ -59,6 +59,7 @@
 <xs:element name="Nom" type="xs:string"/>
 <xs:element name="Prenom" type="xs:string"/>
 <xs:element name="adresse" type="xs:string"/>
+<xs:element name="ville" type="xs:string"/>
 <xs:element name="date" type="xs:date"/>
 <xs:element name="affluence" type="xs:integer"/>
 <xs:element name="agent">
@@ -138,6 +139,7 @@
     <xs:sequence>
         <xs:element ref="affluence"/>
         <xs:element ref="adresse"/>
+        <xs:element ref="ville"/>
     </xs:sequence>
     <xs:attribute name="refeta" type="xs:string" use="required"/>
 </xs:complexType>
@@ -152,6 +154,7 @@
         <xs:element ref="date"/>
         <xs:element ref="affluence"/>
         <xs:element ref="adresse"/>
+        <xs:element ref="ville"/>
     </xs:sequence>
     <xs:attribute name="idevent" type="xs:string" use="required"/>
 </xs:complexType>
