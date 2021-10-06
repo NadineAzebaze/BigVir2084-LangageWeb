@@ -16,12 +16,12 @@
 
     <xs:key name="keycitoyen">
 	    <xs:selector xpath="./observatoireMondial/citoyens/citoyen"/>
-	    <xs:field xpath="@id"/>
+	    <xs:field xpath="@idC"/>
     </xs:key>
 
     <xs:keyref name="keymedecin" refer="keycitoyen">
 	    <xs:selector xpath="./agenceGouvernement/agents/medecin"/>
-	    <xs:field xpath="@clé"/>
+	    <xs:field xpath="@idM"/>
     </xs:keyref>
 
     <xs:keyref name="keyagent" refer="keycitoyen">
@@ -76,7 +76,7 @@
         <xs:sequence>
             <xs:element ref="LC"/>
         </xs:sequence>
-        <xs:attribute name="clé" use="required" type="xs:string"/>
+        <xs:attribute name="idM" use="required" type="xs:string"/>
     </xs:complexType>
 </xs:element>
 
@@ -95,7 +95,7 @@
             <xs:element name="antecedentsMedicaux" type="AM" minOccurs="0" maxOccurs="1"/>
             <xs:element name="historiqueSocial" type="HS" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
-        <xs:attribute name="id" type='xs:string' use="required"/>
+        <xs:attribute name="idC" type='xs:string' use="required"/>
     </xs:complexType>
 </xs:element>
 

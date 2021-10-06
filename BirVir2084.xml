@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<BigVir xmlns="http://myBigVir.org/"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://myBigVir.org/   BigVir2084.xsd">
+
+            <agenceGouvernement>
+                <agents>
+                    <agent idA=""  />
+                    <medecin clé="">
+                        <LC>
+                            <patient idP="" />
+                        </LC>
+                    </medecin>
+                </agents>
+            </agenceGouvernement>
+
+            <ObservatoireMondial>
+                <citoyens>
+                    <citoyen id="1">
+                        <informationsPersonnelles>
+                            <Nom></Nom>
+                            <Prenom></Prenom>
+                            <dateDeNaissance></dateDeNaissance>
+                            <poids></poids>
+                            <age></age>
+                        </informationsPersonnelles>
+                        <antecedentsMedicaux>
+                            <hospitalisations>
+                                <maladie></maladie>
+                                <dateEntree>2021-04-04</dateEntree>
+                                <dateSortie></dateSortie>
+                            </hospitalisations>
+                            <tests>
+                                <resultat></resultat>
+                                <intitule></intitule>
+                            </tests>
+                            <consultations>
+                                <date></date>
+                            </consultations>
+                            <statut>
+                                <statutsInfection>
+                                    <infecté></infecté>
+                                </statutsInfection>
+                                <statutsImmunisation>
+                                    <contaminable></contaminable>
+                                </statutsImmunisation>
+                                <statutsVaccination>
+                                    <nonVacciné></nonVacciné>
+                                </statutsVaccination>
+                            </statut>
+                        </antecedentsMedicaux>
+                        <historiqueSocial>
+                            <etablissement refeta="1" />
+                            <evenement refevent="1" />
+                        </historiqueSocial>
+                    </citoyen>
+                </citoyens>
+                
+                <lieux>
+                    <lieu refeta="1">
+                        <affluence>1</affluence>
+                        <adresse></adresse>
+                    </lieu>
+                </lieux>
+
+                <events>
+                    <event idevent="1">
+                        <date></date>
+                        <affluence></affluence>
+                    </event>
+                </events>
+            </ObservatoireMondial>
+
+</BigVir>
