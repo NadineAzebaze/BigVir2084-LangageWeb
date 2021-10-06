@@ -14,6 +14,16 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:key name="keyindicateur">
+        <xs:selector xpath="./observatoireMondial/indicateurDeSanté"/>
+        <xs:field xpath="@indicateur"/>
+    </xs:key>
+
+    <xs:keyref name="refindicateur" refer="keyindicateur">
+        <xs:selector xpath="./agenceGouvernement/valeurIndicateur"/>
+        <xs:field xpath="@refIndicateur"/>
+    </xs:keyref>
+
     <xs:key name="keycitoyen">
 	    <xs:selector xpath="./observatoireMondial/citoyens/citoyen"/>
 	    <xs:field xpath="@idC"/>
@@ -67,6 +77,14 @@
         <xs:attribute name="idA" type='xs:string' use="required"/>
     </xs:complexType>
 </xs:element>
+    <xs:element name="indicateur">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="domaine" type="xs:string"/>
+                <xs:element name="valeur" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     <xs:element name="patient">
         <xs:complexType>
             <xs:attribute name="idP" type='xs:string' use="required"/>
@@ -112,6 +130,14 @@
 		        </xs:sequence>
 	        </xs:complexType>
         </xs:element>
+        <xs:element name="valeurIndicateur">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="indicateur"/>
+                </xs:sequence>
+                <xs:attribute name="refIndicateur" type="xs:string"/>
+            </xs:complexType>
+        </xs:element>
     </xs:sequence>
 </xs:complexType>
 
@@ -121,8 +147,17 @@
         <xs:element name="citoyens" type="CITOYENS"/>
         <xs:element name="lieux" type="LIEUX"/>
         <xs:element name="events" type="EVENTS"/>
+        <xs:element name="indicateurDeSanté" >
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="indicateur"/>
+                </xs:sequence>
+                <xs:attribute name="indicateur" type="xs:string"/>
+            </xs:complexType>
+        </xs:element>
     </xs:sequence>
 </xs:complexType>
+
 
 <xs:complexType name="CITOYENS">
     <xs:sequence>
