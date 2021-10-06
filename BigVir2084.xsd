@@ -219,32 +219,40 @@
 
 <xs:complexType name="STATUTS">
     <xs:sequence>
-        <xs:element name="statutsInfection" type="INFECTION"/>
-        <xs:element name="statutsImmunisation" type="IMMUNISATION"/>
-        <xs:element name="statutsVaccination" type="VACCINATION"/>
+        <xs:element name="statutInfection" >
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="statut"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="statutImmunisation">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="statut"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="statutVaccination">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="statut"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
     </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="INFECTION">
-    <xs:choice>
-        <xs:element name="infecté" type="xs:string" default="infecté"/>
-        <xs:element name="saint" type="xs:string" default="saint"/>
-    </xs:choice>
-</xs:complexType>
+    <xs:element name="statut">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="positif" type="xs:boolean" default="false"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
-<xs:complexType name="IMMUNISATION">
-    <xs:choice>
-        <xs:element name="immunisé" type="xs:string" default="immunisé"/>
-        <xs:element name="contaminable" type="xs:string" default="contaminable"/>
-    </xs:choice>
-</xs:complexType>
 
-<xs:complexType name="VACCINATION">
-    <xs:choice>
-        <xs:element name="vacciné" type="xs:string" default="vacciné"/>
-        <xs:element name="nonVacciné" type="xs:string" default="nonvacciné"/>
-    </xs:choice>
-</xs:complexType>
+
 
 
 </xs:schema>
