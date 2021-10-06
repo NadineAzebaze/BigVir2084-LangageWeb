@@ -67,33 +67,13 @@
 <xs:complexType name="AGENTS">
     <xs:sequence>
         <xs:element name="agent" type="AGENT" maxOccurs="unbounded"/>
-        <xs:element name="medecin" type="MEDECIN" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="medecin" type="MEDECIN" maxOccurs="unbounded"/>
     </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="AGENT">
     <xs:attribute name="idA" type='xs:integer' use="required"/>
 </xs:complexType>
-
-<xs:complexType name="CITOYEN">
-    <xs:sequence>
-        <xs:element name="informationsPersonnelles" type="IP"/>
-        <xs:element name="antecedentsMedicaux" type="AM"/>
-        <xs:element name="historiqueSocial" type="HS"/>
-    </xs:sequence>
-    <xs:attribute name="id" type='xs:integer' use="required"/>
-</xs:complexType>
-
-<xs:complexType name="IP">
-    <xs:sequence>
-        <xs:element ref="Nom"/>
-        <xs:element ref="Prenom"/>
-        <xs:element name="dateDeNaissance" type="xs:date"/>
-        <xs:element name="poids" type="xs:integer"/>
-        <xs:element name="age" type="xs:integer"/>
-    </xs:sequence>
-</xs:complexType>
-
 
 <xs:complexType name="MEDECIN">
     <xs:sequence>
@@ -114,6 +94,27 @@
         <xs:element name="event" type="EVENT" maxOccurs="unbounded"/>
     </xs:sequence>
 </xs:complexType>
+
+
+<xs:complexType name="CITOYEN">
+    <xs:sequence>
+        <xs:element name="informationsPersonnelles" type="IP"/>
+        <xs:element name="antecedentsMedicaux" type="AM"/>
+        <xs:element name="historiqueSocial" type="HS"/>
+    </xs:sequence>
+    <xs:attribute name="id" type='xs:integer' use="required"/>
+</xs:complexType>
+
+<xs:complexType name="IP">
+    <xs:sequence>
+        <xs:element ref="Nom"/>
+        <xs:element ref="Prenom"/>
+        <xs:element name="dateDeNaissance" type="xs:date"/>
+        <xs:element name="poids" type="xs:integer"/>
+        <xs:element name="age" type="xs:integer"/>
+    </xs:sequence>
+</xs:complexType>
+
 
 <xs:complexType name="LIEU">
     <xs:sequence>
