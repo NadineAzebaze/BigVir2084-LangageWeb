@@ -15,7 +15,7 @@
        </agenceGouvernement>
 
        <ObservatoireMondial>
-            <citoyen id="1"/>
+            <citoyen idC="1"/>
             <lieu refeta="1">
                 <affluence>1</affluence>
                 <adresse></adresse>
@@ -27,7 +27,7 @@
             </event>
        </ObservatoireMondial>
 
-       <citoyen id="1">
+       <citoyen idC="1">
            <informationsPersonnelles>
                <Nom>Mervile</Nom>
                <Prenom>Thibaut</Prenom>
@@ -72,7 +72,7 @@
            </historiqueSocial>
        </citoyen>
 
-       <citoyen id="2">
+       <citoyen idC="2">
             <informationsPersonnelles>
                 <Nom>Joly</Nom>
                 <Prenom>Carole</Prenom>
