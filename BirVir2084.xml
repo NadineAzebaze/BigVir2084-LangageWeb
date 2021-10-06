@@ -14,7 +14,9 @@
                         </Liste>
                     </medecin>
                 </agents>
+               <valeurIndicateur refIndicateur="1" />
             </agenceGouvernement>
+
 
             <ObservatoireMondial>
                 <citoyens>
@@ -33,8 +35,8 @@
                                 <dateSortie>2021-04-20</dateSortie>
                             </hospitalisations>
                             <tests>
-                                <resultat>diab�te de type1</resultat>
-                                <intitule>le taux de sucre est sup�rieur � 1,26g/l</intitule>
+                                <resultat>diab�te de type1</resultat>
+                                <intitule>le taux de sucre est sup�rieur � 1,26g/l</intitule>
                             </tests>
                             <consultations>
                                 <date>2021-04-03</date>
@@ -75,7 +77,7 @@
             
                             <tests>
                                 <resultat>PCR positif</resultat>
-                                <intitule>pr�sence des symptomes de covid</intitule>
+                                <intitule>pr�sence des symptomes de covid</intitule>
                             </tests>
             
                             <consultations>
@@ -139,28 +141,49 @@
                         <affluence>1</affluence>
                         <adresse>11 rue Circulaire</adresse>
                         <ville>Paris</ville>
+                        <listePrésent></listePrésent>
                     </lieu>
                     <lieu refeta="2">
                         <affluence>2</affluence>
                         <adresse>12 rue saint Augustin</adresse>
                         <ville>Paris</ville>
+                        <listePrésent>
+                            <citoyen idC="1"></citoyen>
+                            <citoyen idC="2"></citoyen>
+                        </listePrésent>
                     </lieu>
                 </lieux>
 
                 <events>
                     <event idevent="1">
                         <date>2021-04-21</date>
-                        <affluence>1</affluence>
+                        <affluence>70</affluence>
                         <adresse>17 Boulevard Victor Hugo</adresse>
                         <ville>Paris</ville>
+                        <listePrésent>
+                            <citoyen idC="3"></citoyen>
+                            <citoyen idC="2"></citoyen>
+                        </listePrésent>
                     </event>
                     <event idevent="2">
                         <date>2021-05-01</date>
-                        <affluence>3</affluence>
+                        <affluence>60</affluence>
                         <adresse>5 Boulevard Gambetta</adresse>
                         <ville>Paris</ville>
+                        <listePrésent>
+                            <citoyen idC="1"></citoyen>
+                            <citoyen idC="2"></citoyen>
+                            <citoyen idC="3"></citoyen>
+                        </listePrésent>
                     </event>
                 </events>
+
+                <indicateurDeSanté indicateur="1">
+                    <indicateur>
+                        <domaine>mortalité</domaine>
+                        <pourcentage>8</pourcentage>
+                    </indicateur>
+                </indicateurDeSanté>
             </ObservatoireMondial>
 
 </BigVir>

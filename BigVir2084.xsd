@@ -154,7 +154,7 @@
             </xs:element>
             <xs:element name="valeurIndicateur">
                 <xs:complexType>
-                    <xs:attribute name="refIndicateur" type="xs:string"/>
+                    <xs:attribute name="refIndicateur" use="required" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
@@ -171,7 +171,7 @@
                     <xs:sequence>
                         <xs:element ref="indicateur"/>
                     </xs:sequence>
-                    <xs:attribute name="indicateur" type="xs:string"/>
+                    <xs:attribute name="indicateur" use="required" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
