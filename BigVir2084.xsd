@@ -243,13 +243,7 @@
     </xs:sequence>
 </xs:complexType>
 
-    <xs:element name="statut">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="positif" type="xs:boolean" default="false"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+    <xs:element name="statut" type="xs:boolean" default="false"/>
 
 
 
