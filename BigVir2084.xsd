@@ -11,23 +11,26 @@
         <xs:sequence>
             <xs:element name="agenceGouvernement" type="AG"/>
             <xs:element name="ObservatoireMondial" type="OM"/>
-            <!--xs:element name="citoyen" type="CITOYEN" minOccurs="0" maxOccurs="unbounded"/-->
         </xs:sequence>
     </xs:complexType>
 
     <xs:key name="keycitoyen">
-	    <xs:selector xpath="observatoireMondial/citoyens/citoyen"/>
-	    <xs:field xpath="@idC"/>
+	    <xs:selector xpath="./observatoireMondial/citoyens/citoyen"/>
+	    <xs:field xpath="@id"/>
     </xs:key>
 
     <xs:keyref name="keymedecin" refer="keycitoyen">
-	    <xs:selector xpath="agenceGouvernement/agents/medecin"/>
-	    <xs:field xpath="@idM"/>
+	    <xs:selector xpath="./agenceGouvernement/agents/medecin"/>
+	    <xs:field xpath="@clé"/>
     </xs:keyref>
 
     <xs:keyref name="keyagent" refer="keycitoyen">
-	    <xs:selector xpath="agenceGouvernement/agents/agent"/>
+	    <xs:selector xpath="./agenceGouvernement/agents/agent"/>
 	    <xs:field xpath="@idA"/>
+    </xs:keyref>
+    <xs:keyref name="keypatient" refer="keycitoyen">
+        <xs:selector xpath="./agenceGouvernement/agents/medecin/LC/patient"/>
+        <xs:field xpath="@idP"/>
     </xs:keyref>
 
     <xs:key name="keylieu">
@@ -63,19 +66,27 @@
         <xs:attribute name="idA" type='xs:string' use="required"/>
     </xs:complexType>
 </xs:element>
+    <xs:element name="patient">
+        <xs:complexType>
+            <xs:attribute name="idP" type='xs:string' use="required"/>
+        </xs:complexType>
+    </xs:element>
 <xs:element name="medecin">
     <xs:complexType>
         <xs:sequence>
-            <xs:element name="listePatients" type="LC"/>
+            <xs:element ref="LC"/>
         </xs:sequence>
-        <xs:attribute name="idM" use="required" type="xs:string"/>
+        <xs:attribute name="clé" use="required" type="xs:string"/>
     </xs:complexType>
 </xs:element>
-<xs:complexType name="LC">
-    <xs:sequence>
-        <xs:element ref="citoyen" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-</xs:complexType>
+
+    <xs:element name="LC">
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element ref="patient" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 <xs:element name="citoyen">
     <xs:complexType>
@@ -84,7 +95,7 @@
             <xs:element name="antecedentsMedicaux" type="AM" minOccurs="0" maxOccurs="1"/>
             <xs:element name="historiqueSocial" type="HS" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
-        <xs:attribute name="idC" type='xs:string' use="required"/>
+        <xs:attribute name="id" type='xs:string' use="required"/>
     </xs:complexType>
 </xs:element>
 
