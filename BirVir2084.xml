@@ -8,9 +8,9 @@
             <agenceGouvernement>
                 <agents>
                     <agent idA="1"  />
-                    <medecin idM="">
+                    <medecin idM="1">
                         <LC>
-                            <patient idP="" />
+                            <patient idP="1" />
                         </LC>
                     </medecin>
                 </agents>
@@ -40,15 +40,15 @@
                                 <date>2021-04-03</date>
                             </consultations>
                             <statut>
-                                <statutsInfection>
-                                    <saint></saint>
-                                </statutsInfection>
-                                <statutsImmunisation>
-                                    <immunisé></immunisé>
-                                </statutsImmunisation>
-                                <statutsVaccination>
-                                    <nonVacciné></nonVacciné>
-                                </statutsVaccination>
+                                <statutInfection>
+                                    <valeur>true</valeur>
+                                </statutInfection>
+                                <statutImmunisation>
+                                    <valeur>true</valeur>
+                                </statutImmunisation>
+                                <statutVaccination>
+                                    <valeur>true</valeur>
+                                </statutVaccination>
                             </statut>
                         </antecedentsMedicaux>
                         <historiqueSocial>
@@ -83,15 +83,15 @@
                             </consultations>
             
                             <statut>
-                                <statutsInfection>
-                                    <infecté></infecté>
-                                </statutsInfection>
-                                <statutsImmunisation>
-                                    <contaminable></contaminable>
-                                </statutsImmunisation> 
-                                <statutsVaccination>
-                                    <nonVacciné></nonVacciné>
-                                </statutsVaccination>
+                               <statutInfection>
+                                   <valeur>true</valeur>
+                               </statutInfection>
+                               <statutImmunisation>
+                                   <valeur>true</valeur>
+                               </statutImmunisation>
+                               <statutVaccination>
+                                   <valeur>true</valeur>
+                               </statutVaccination>
                             </statut>
                         </antecedentsMedicaux>
             
@@ -116,13 +116,19 @@
                                <dateSortie>2021-10-06</dateSortie>
                            </hospitalisations>
                            <tests>
-                               <resultat></resultat>
-                               <intitule></intitule>
+                               <resultat>Cancer de stade 1</resultat>
+                               <intitule>tumeur unique et de petite taille</intitule>
                            </tests>
                            <statut>
-                               <statutsInfection>
-                                   <saint></saint>
-                               </statutsInfection>
+                               <statutInfection>
+                                   <valeur>true</valeur>
+                               </statutInfection>
+                               <statutImmunisation>
+                                   <valeur>false</valeur>
+                               </statutImmunisation>
+                               <statutVaccination>
+                                   <valeur>true</valeur>
+                               </statutVaccination>
                            </statut>
                        </antecedentsMedicaux>
                    </citoyen>
@@ -132,7 +138,12 @@
                     <lieu refeta="1">
                         <affluence>1</affluence>
                         <adresse>11 rue Circulaire</adresse>
-                        <ville>Lille</ville>
+                        <ville>Paris</ville>
+                    </lieu>
+                    <lieu refeta="2">
+                        <affluence>2</affluence>
+                        <adresse>12 rue saint Augustin</adresse>
+                        <ville>Paris</ville>
                     </lieu>
                 </lieux>
 
@@ -141,7 +152,13 @@
                         <date>2021-04-21</date>
                         <affluence>1</affluence>
                         <adresse>17 Boulevard Victor Hugo</adresse>
-                        <ville>Lille</ville>
+                        <ville>Paris</ville>
+                    </event>
+                    <event idevent="2">
+                        <date>2021-05-01</date>
+                        <affluence>3</affluence>
+                        <adresse>5 Boulevard Gambetta</adresse>
+                        <ville>Paris</ville>
                     </event>
                 </events>
             </ObservatoireMondial>
