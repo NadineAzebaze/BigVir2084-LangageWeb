@@ -257,28 +257,28 @@
         <xs:element name="statutInfection" >
             <xs:complexType>
                 <xs:sequence>
-                    <xs:element ref="statut"/>
+                    <xs:element ref="valeur"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:element>
         <xs:element name="statutImmunisation">
             <xs:complexType>
                 <xs:sequence>
-                    <xs:element ref="statut"/>
+                    <xs:element ref="valeur"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:element>
         <xs:element name="statutVaccination">
             <xs:complexType>
                 <xs:sequence>
-                    <xs:element ref="statut"/>
+                    <xs:element ref="valeur"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:element>
     </xs:sequence>
 </xs:complexType>
 
-    <xs:element name="statut" type="xs:boolean" default="false"/>
+    <xs:element name="valeur" type="xs:boolean" default="false"/>
 
 
 
