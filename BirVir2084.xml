@@ -9,9 +9,9 @@
                 <agents>
                     <agent idA="1"  />
                     <medecin idM="1">
-                        <LC>
+                        <Liste>
                             <patient idP="1" />
-                        </LC>
+                        </Liste>
                     </medecin>
                 </agents>
             </agenceGouvernement>
@@ -33,8 +33,8 @@
                                 <dateSortie>2021-04-20</dateSortie>
                             </hospitalisations>
                             <tests>
-                                <resultat>diabÃ¨te de type1</resultat>
-                                <intitule>le taux de sucre est supÃ©rieur Ã  1,26g/l</intitule>
+                                <resultat>diabète de type1</resultat>
+                                <intitule>le taux de sucre est supérieur à 1,26g/l</intitule>
                             </tests>
                             <consultations>
                                 <date>2021-04-03</date>
@@ -75,7 +75,7 @@
             
                             <tests>
                                 <resultat>PCR positif</resultat>
-                                <intitule>prÃ©sence des symptomes de covid</intitule>
+                                <intitule>présence des symptomes de covid</intitule>
                             </tests>
             
                             <consultations>

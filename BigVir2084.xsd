@@ -93,16 +93,24 @@
 <xs:element name="medecin">
     <xs:complexType>
         <xs:sequence>
-            <xs:element ref="LC"/>
+            <xs:element ref="Liste"/>
         </xs:sequence>
         <xs:attribute name="idM" use="required" type="xs:string"/>
     </xs:complexType>
 </xs:element>
 
-    <xs:element name="LC">
+    <xs:element name="Liste">
         <xs:complexType >
             <xs:sequence>
                 <xs:element ref="patient" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="listePrésent">
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element ref="citoyen" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -175,6 +183,7 @@
         <xs:element ref="affluence"/>
         <xs:element ref="adresse"/>
         <xs:element ref="ville"/>
+        <xs:element ref="listePrésent"/>
     </xs:sequence>
     <xs:attribute name="refeta" type="xs:string" use="required"/>
 </xs:complexType>
@@ -190,6 +199,7 @@
         <xs:element ref="affluence"/>
         <xs:element ref="adresse"/>
         <xs:element ref="ville"/>
+        <xs:element ref="listePrésent"/>
     </xs:sequence>
     <xs:attribute name="idevent" type="xs:string" use="required"/>
 </xs:complexType>
