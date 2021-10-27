@@ -1,14 +1,26 @@
 Rapport tb. XML:
 Bon travail mais des choses sont à revoir:
 Il faut détailler la description de hospitalisation et consultations (notamment le lieu).
+            Pour hospitalisation, on pourrait rajouter le médécin traitant, l'hôpital(lieu)
+            Pour la consultation, on rajoute pareil
+
 Pour les tests pas clair ce qui est un résultat et ce qui est un intitulé, et ce serait bien d'avoir des valeurs booléennnes ou
  numéiques pour pouvoir faire des calculs dessus.
+        Dans tests rajouté test avec la nature/type du test et son résultat avec des valeurs booléennes
+
  Il n'y a jamais plus d'une consultation ou hospitalisation dans la base ce qui n'est pas réaliste.
- Qu'est ce que les établissements?
+
+ Qu'est ce que les établissements?   CE SONT LES LIEUX VISITES
  Il manque d'y mettre les hopitaux par exemple.
+
  Je ne comprends pas les agents gouvernementaux: il n'y a qu'un agent, le citoyen 1 qui est médecin et n'a que lui-même
   comme patient??? A revoir sans doute.
-  Revoir encoding en utf8 et sans accent sur les noms de balises.
+        créer plusieurs citoyens, affectés certains comme agents d'autres comme médécins, d'autres comme patients
+
+  Revoir encoding en utf8 et sans accent sur les noms de balises. A CORRIGER
+
    XML schema: Déclaration d'éléments et défintion de types complexes ok.
-   Pas de définition de types simples -> TODO.
+
+   Pas de définition de types simples -> TODO.  A CORRIGER
+
   Déclaration des key keyref OK
