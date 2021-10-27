@@ -21,14 +21,14 @@
             <ObservatoireMondial>
                 <citoyens>
                     <citoyen idC="1">
-                        <informationsPersonnelles>
+                        <informations-personnelles>
                             <Nom>Mervile</Nom>
                             <Prenom>Thibaut</Prenom>
                             <dateDeNaissance>1992-05-29</dateDeNaissance>
                             <poids>70</poids>
                             <age>29</age>
-                        </informationsPersonnelles>
-                        <antecedentsMedicaux>
+                        </informations-personnelles>
+                        <antecedents-medicaux>
                             <hospitalisations>
                                 <maladie></maladie>
                                 <dateEntree>2021-04-04</dateEntree>
@@ -52,23 +52,23 @@
                                     <valeur>true</valeur>
                                 </statutVaccination>
                             </statut>
-                        </antecedentsMedicaux>
-                        <historiqueSocial>
+                        </antecedents-medicaux>
+                        <historique-social>
                             <etablissement refeta="1" />
                             <evenement refevent="1" />
-                        </historiqueSocial>
+                        </historique-social>
                     </citoyen>
 
                     <citoyen idC="2">
-                        <informationsPersonnelles>
+                        <informations-personnelles>
                             <Nom>Joly</Nom>
                             <Prenom>Carole</Prenom>
                             <dateDeNaissance>1992-05-29</dateDeNaissance>
                             <poids>60</poids>
                             <age>29</age>
-                        </informationsPersonnelles>
+                        </informations-personnelles>
                         
-                        <antecedentsMedicaux>
+                        <antecedents-medicaux>
                             <hospitalisations>
                                 <maladie>Covid19</maladie>
                                 <dateEntree>2021-08-10</dateEntree>
@@ -95,23 +95,23 @@
                                    <valeur>true</valeur>
                                </statutVaccination>
                             </statut>
-                        </antecedentsMedicaux>
+                        </antecedents-medicaux>
             
-                        <historiqueSocial>
+                        <historique-social>
                             <etablissement refeta="2" />
                             <evenement refevent="2" />
-                        </historiqueSocial>
+                        </historique-social>
                    </citoyen>
 
                    <citoyen idC="3">
-                       <informationsPersonnelles>
+                       <informations-personnelles>
                            <Nom>Dylan</Nom>
                            <Prenom>Bob</Prenom>
                            <dateDeNaissance>1994-02-01</dateDeNaissance>
                            <poids>80</poids>
                            <age>27</age>
-                       </informationsPersonnelles>
-                       <antecedentsMedicaux>
+                       </informations-personnelles>
+                       <antecedents-medicaux>
                            <hospitalisations>
                                <maladie>Cancer</maladie>
                                <dateEntree>2021-09-06</dateEntree>
@@ -132,7 +132,7 @@
                                    <valeur>true</valeur>
                                </statutVaccination>
                            </statut>
-                       </antecedentsMedicaux>
+                       </antecedents-medicaux>
                    </citoyen>
                 </citoyens>
                 
@@ -141,16 +141,16 @@
                         <affluence>1</affluence>
                         <adresse>11 rue Circulaire</adresse>
                         <ville>Paris</ville>
-                        <listePrésent></listePrésent>
+                        <liste-present></liste-present>
                     </lieu>
                     <lieu refeta="2">
                         <affluence>2</affluence>
                         <adresse>12 rue saint Augustin</adresse>
                         <ville>Paris</ville>
-                        <listePrésent>
+                        <liste-present>
                             <citoyen idC="1"></citoyen>
                             <citoyen idC="2"></citoyen>
-                        </listePrésent>
+                        </liste-present>
                     </lieu>
                 </lieux>
 
@@ -160,21 +160,21 @@
                         <affluence>70</affluence>
                         <adresse>17 Boulevard Victor Hugo</adresse>
                         <ville>Paris</ville>
-                        <listePrésent>
+                        <liste-present>
                             <citoyen idC="3"></citoyen>
                             <citoyen idC="2"></citoyen>
-                        </listePrésent>
+                        </liste-present>
                     </event>
                     <event idevent="2">
                         <date>2021-05-01</date>
                         <affluence>60</affluence>
                         <adresse>5 Boulevard Gambetta</adresse>
                         <ville>Paris</ville>
-                        <listePrésent>
+                        <liste-present>
                             <citoyen idC="1"></citoyen>
                             <citoyen idC="2"></citoyen>
                             <citoyen idC="3"></citoyen>
-                        </listePrésent>
+                        </liste-present>
                     </event>
                 </events>
 

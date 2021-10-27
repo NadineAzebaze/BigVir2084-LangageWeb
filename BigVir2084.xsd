@@ -118,6 +118,49 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:complexType name="TESTS" >
+        <xs:sequence>
+            <xs:element name="test" type="TEST" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TEST">
+        <xs:sequence>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="resultat" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="TYPEDELIEU">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="centre commercial"/>
+            <xs:enumeration value="musée"/>
+            <xs:enumeration value="plage"/>
+            <xs:enumeration value="salle de spectacle"/>
+            <xs:enumeration value="salle de sport"/>
+            <xs:enumeration value="épicerie"/>
+            <xs:enumeration value="place publique"/>
+            <xs:enumeration value="salle de jeux"/>
+            <xs:enumeration value="Ecole"/>
+            <xs:enumeration value="centre de santé"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TYPEMALADIE">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="centre commercial"/>
+            <xs:enumeration value="musée"/>
+            <xs:enumeration value="plage"/>
+            <xs:enumeration value="salle de spectacle"/>
+            <xs:enumeration value="salle de sport"/>
+            <xs:enumeration value="épicerie"/>
+            <xs:enumeration value="place publique"/>
+            <xs:enumeration value="salle de jeux"/>
+            <xs:enumeration value="Ecole"/>
+            <xs:enumeration value="centre de santé"/>
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:element name="medecin">
         <xs:complexType>
             <xs:sequence>
@@ -135,7 +178,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="listePrésent">
+    <xs:element name="liste-present">
         <xs:complexType >
             <xs:sequence>
                 <xs:element ref="citoyen" minOccurs="0" maxOccurs="unbounded"/>
@@ -146,9 +189,9 @@
     <xs:element name="citoyen">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="informationsPersonnelles" type="IP" minOccurs="0"/>
-                <xs:element name="antecedentsMedicaux" type="AM" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="historiqueSocial" type="HS" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="informations-personnelles" type="IP" minOccurs="0"/>
+                <xs:element name="antecedents-medicaux" type="AM" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="historique-social" type="HS" minOccurs="0" maxOccurs="1"/>
             </xs:sequence>
             <xs:attribute name="idC" type='xs:string' use="required"/>
         </xs:complexType>
@@ -205,12 +248,11 @@
     </xs:complexType>
     <xs:complexType name="LIEU">
         <xs:sequence>
-            <xs:element name="Type" >
-            </xs:element>
+            <xs:element name="Type" type="TYPEDELIEU" />
             <xs:element ref="affluence"/>
             <xs:element ref="adresse"/>
             <xs:element ref="ville"/>
-            <xs:element ref="listePrésent"/>
+            <xs:element ref="liste-present"/>
         </xs:sequence>
         <xs:attribute name="refeta" type="xs:string" use="required"/>
     </xs:complexType>
@@ -226,7 +268,7 @@
             <xs:element ref="affluence"/>
             <xs:element ref="adresse"/>
             <xs:element ref="ville"/>
-            <xs:element ref="listePrésent"/>
+            <xs:element ref="liste-present"/>
         </xs:sequence>
         <xs:attribute name="idevent" type="xs:string" use="required"/>
     </xs:complexType>
@@ -247,14 +289,7 @@
     <xs:complexType name="AM">
         <xs:sequence>
             <xs:element name="hospitalisations" type="HOSPITALISATIONS" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="tests"  minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType >
-                    <xs:sequence>
-                        <xs:element name="resultat" type="xs:string"/>
-                        <xs:element name='intitule' type='xs:string'/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
+            <xs:element name="tests" type="TESTS"/>
             <xs:element name="consultations" type="CONSULTATIONS" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="statut" type="STATUTS"/>
         </xs:sequence>
@@ -279,7 +314,7 @@
     <!--  Definition des complexTypes de l'AM(Antécédents Médicaux du Citoyen)  -->
     <xs:complexType name="HOSPITALISATIONS">
         <xs:sequence>
-            <xs:element name="maladie" type="xs:string"/>
+            <xs:element name="maladie" type="MALADIE"/>
             <xs:element name="dateEntree" type="xs:date"/>
             <xs:element name="dateSortie" type="xs:date"/>
             <xs:element ref="medecin"/>
