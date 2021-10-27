@@ -60,6 +60,16 @@
         <xs:field xpath="@refeta"/>
     </xs:keyref>
 
+    <xs:keyref name="keyhopital" refer="keylieu">
+        <xs:selector xpath="observatoireMondial/citoyens/citoyen/AntécédentsMédicaux/Hospitalistaions"/>
+        <xs:field xpath="@hop"/>
+    </xs:keyref>
+
+    <xs:keyref name="keyhopit" refer="keylieu">
+        <xs:selector xpath="observatoireMondial/citoyens/citoyen/AntécédentsMédicaux/Consultations"/>
+        <xs:field xpath="@hop"/>
+    </xs:keyref>
+
     <xs:keyref name="keyevenement" refer="keyevent">
         <xs:selector xpath="observatoireMondial/citoyens/citoyen/historiqueSocial/evenements/evenement"/>
         <xs:field xpath="@refevent"/>
@@ -97,6 +107,10 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="HOPITAL">
+        <xs:attribute name="hop" type="xs:string" use="required"/>
+    </xs:complexType>
 
     <xs:element name="patient">
         <xs:complexType>
@@ -191,6 +205,8 @@
     </xs:complexType>
     <xs:complexType name="LIEU">
         <xs:sequence>
+            <xs:element name="Type" >
+            </xs:element>
             <xs:element ref="affluence"/>
             <xs:element ref="adresse"/>
             <xs:element ref="ville"/>
@@ -266,12 +282,16 @@
             <xs:element name="maladie" type="xs:string"/>
             <xs:element name="dateEntree" type="xs:date"/>
             <xs:element name="dateSortie" type="xs:date"/>
+            <xs:element ref="medecin"/>
+            <xs:element name="hopital" type ="HOPITAL"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="CONSULTATIONS">
         <xs:sequence>
             <xs:element ref="date"/>
+            <xs:element ref="medecin"/>
+            <xs:element name="hopital" type="HOPITAL"/>
         </xs:sequence>
     </xs:complexType>
 
