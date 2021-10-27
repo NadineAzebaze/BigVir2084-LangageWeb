@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://myBigVir.org/"
-    xmlns="http://myBigVir.org/"
-    elementFormDefault="qualified"
-    attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://myBigVir.org/"
+           xmlns="http://myBigVir.org/"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
 
 
 <xs:element name="BigVir">
     <!--  Definition de la base de donées BigVir  -->
     <xs:complexType>
         <xs:sequence>
-            <xs:element name="agenceGouvernement" type="AG"/>
-            <xs:element name="ObservatoireMondial" type="OM"/>
+            <xs:element name="agence-gouvernementale" type="AG"/>
+            <xs:element name="observatoire-mondial" type="OM"/>
         </xs:sequence>
     </xs:complexType>
 
     <!--  clés et références  -->
     <xs:key name="keyindicateur">
-        <xs:selector xpath="./observatoireMondial/indicateurDeSanté"/>
+        <xs:selector xpath="./observatoire-mondial/indicateurDeSanté"/>
         <xs:field xpath="@indicateur"/>
     </xs:key>
 
     <xs:keyref name="refindicateur" refer="keyindicateur">
-        <xs:selector xpath="./agenceGouvernement/valeurIndicateur"/>
+        <xs:selector xpath="./agence-gouvernementale/valeur-indicateur"/>
         <xs:field xpath="@refIndicateur"/>
     </xs:keyref>
 
@@ -32,46 +32,46 @@
     </xs:key>
 
     <xs:keyref name="keymedecin" refer="keycitoyen">
-	    <xs:selector xpath="./agenceGouvernement/agents/medecin"/>
+	    <xs:selector xpath="./agence-gouvernementale/agents/medecin"/>
 	    <xs:field xpath="@idM"/>
     </xs:keyref>
 
     <xs:keyref name="keyagent" refer="keycitoyen">
-	    <xs:selector xpath="./agenceGouvernement/agents/agent"/>
+	    <xs:selector xpath="./agence-gouvernementale/agents/agent"/>
 	    <xs:field xpath="@idA"/>
     </xs:keyref>
     <xs:keyref name="keypatient" refer="keycitoyen">
-        <xs:selector xpath="./agenceGouvernement/agents/medecin/LC/patient"/>
+        <xs:selector xpath="./agence-gouvernementale/agents/medecin/LC/patient"/>
         <xs:field xpath="@idP"/>
     </xs:keyref>
 
     <xs:key name="keylieu">
-	    <xs:selector xpath="ObservatoireModial/lieux/lieu"/>
+	    <xs:selector xpath="observatoire-mondial/lieux/lieu"/>
 	    <xs:field xpath="@idetablissement"/>
     </xs:key>
 
     <xs:key name="keyevent">
-	    <xs:selector xpath="ObservatoireModial/events/event"/>
+	    <xs:selector xpath="observatoire-mondial/events/event"/>
 	    <xs:field xpath="@idevent"/>
     </xs:key>
 
     <xs:keyref name="keyetablissement" refer="keylieu">
-        <xs:selector xpath="observatoireMondial/citoyens/citoyen/historiqueSocial/etablissements/etablissement"/>
+        <xs:selector xpath="observatoire-mondial/citoyens/citoyen/historiqueSocial/etablissements/etablissement"/>
         <xs:field xpath="@refeta"/>
     </xs:keyref>
 
     <xs:keyref name="keyhopital" refer="keylieu">
-        <xs:selector xpath="observatoireMondial/citoyens/citoyen/AntécédentsMédicaux/Hospitalistaions"/>
+        <xs:selector xpath="observatoire-mondial/citoyens/citoyen/antecedents-medicaux/Hospitalistaions"/>
         <xs:field xpath="@hop"/>
     </xs:keyref>
 
     <xs:keyref name="keyhopit" refer="keylieu">
-        <xs:selector xpath="observatoireMondial/citoyens/citoyen/AntécédentsMédicaux/Consultations"/>
+        <xs:selector xpath="observatoire-mondial/citoyens/citoyen/antecedents-medicaux/Consultations"/>
         <xs:field xpath="@hop"/>
     </xs:keyref>
 
     <xs:keyref name="keyevenement" refer="keyevent">
-        <xs:selector xpath="observatoireMondial/citoyens/citoyen/historiqueSocial/evenements/evenement"/>
+        <xs:selector xpath="observatoire-mondial/citoyens/citoyen/historique-social/evenements/evenement"/>
         <xs:field xpath="@refevent"/>
     </xs:keyref>
 
@@ -79,9 +79,9 @@
 
 
     <!--  Definition des formats d'éléments répétés dans la base  -->
-    <xs:element name="Nom" type="xs:string"/>
+    <xs:element name="nom" type="xs:string"/>
 
-    <xs:element name="Prenom" type="xs:string"/>
+    <xs:element name="prenom" type="xs:string"/>
 
     <xs:element name="adresse" type="xs:string"/>
 
@@ -93,10 +93,18 @@
 
     <xs:element name="valeur" type="xs:boolean" default="false"/>
 
+
+    <!-- element & complextype mixed -->
     <xs:element name="agent">
     <xs:complexType>
         <xs:attribute name="idA" type='xs:string' use="required"/>
     </xs:complexType>
+    </xs:element>
+
+    <xs:element name="patient">
+        <xs:complexType>
+            <xs:attribute name="idP" type='xs:string' use="required"/>
+        </xs:complexType>
     </xs:element>
 
     <xs:element name="indicateur">
@@ -107,59 +115,6 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
-    <xs:complexType name="HOPITAL">
-        <xs:attribute name="hop" type="xs:string" use="required"/>
-    </xs:complexType>
-
-    <xs:element name="patient">
-        <xs:complexType>
-            <xs:attribute name="idP" type='xs:string' use="required"/>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:complexType name="TESTS" >
-        <xs:sequence>
-            <xs:element name="test" type="TEST" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="TEST">
-        <xs:sequence>
-            <xs:element name="type" type="xs:string"/>
-            <xs:element name="resultat" type="xs:boolean"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:simpleType name="TYPEDELIEU">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="centre commercial"/>
-            <xs:enumeration value="musée"/>
-            <xs:enumeration value="plage"/>
-            <xs:enumeration value="salle de spectacle"/>
-            <xs:enumeration value="salle de sport"/>
-            <xs:enumeration value="épicerie"/>
-            <xs:enumeration value="place publique"/>
-            <xs:enumeration value="salle de jeux"/>
-            <xs:enumeration value="Ecole"/>
-            <xs:enumeration value="centre de santé"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="TYPEMALADIE">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="centre commercial"/>
-            <xs:enumeration value="musée"/>
-            <xs:enumeration value="plage"/>
-            <xs:enumeration value="salle de spectacle"/>
-            <xs:enumeration value="salle de sport"/>
-            <xs:enumeration value="épicerie"/>
-            <xs:enumeration value="place publique"/>
-            <xs:enumeration value="salle de jeux"/>
-            <xs:enumeration value="Ecole"/>
-            <xs:enumeration value="centre de santé"/>
-        </xs:restriction>
-    </xs:simpleType>
 
     <xs:element name="medecin">
         <xs:complexType>
@@ -198,6 +153,61 @@
     </xs:element>
 
 
+    <!--  complexType  -->
+    <xs:complexType name="TESTS" >
+        <xs:sequence>
+            <xs:element name="test" type="TEST" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TEST">
+        <xs:sequence>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="resultat" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="HOPITAL">
+        <xs:attribute name="hop" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="MALADIE">
+        <xs:sequence>
+            <xsl:element name="nom" type="xs:string"/>
+            <xs:element name="type" type="TYPEMALADIE"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!--  simpleType  -->
+    <xs:simpleType name="TYPEDELIEU">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="centre commercial"/>
+            <xs:enumeration value="musée"/>
+            <xs:enumeration value="plage"/>
+            <xs:enumeration value="salle de spectacle"/>
+            <xs:enumeration value="salle de sport"/>
+            <xs:enumeration value="épicerie"/>
+            <xs:enumeration value="place publique"/>
+            <xs:enumeration value="salle de jeux"/>
+            <xs:enumeration value="Ecole"/>
+            <xs:enumeration value="centre de santé"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TYPEMALADIE">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="maladie respiratoire"/>
+            <xs:enumeration value="maladie dermatologiques"/>
+            <xs:enumeration value="maladie cardiovasculaires"/>
+            <xs:enumeration value="maladies ou troubles oculaires"/>
+            <xs:enumeration value="cancers"/>
+            <xs:enumeration value="maladie rare"/>
+            <xs:enumeration value="maladie mentale"/>
+            <xs:enumeration value="maladie génétique"/>
+            <xs:enumeration value="maladie infectueuses"/>
+        </xs:restriction>
+    </xs:simpleType>
+
     <!--  Agence Gouvernementale(AG)  -->
     <xs:complexType name="AG">
         <xs:sequence>
@@ -209,7 +219,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="valeurIndicateur">
+            <xs:element name="valeur-indicateur">
                 <xs:complexType>
                     <xs:attribute name="refIndicateur" use="required" type="xs:string"/>
                 </xs:complexType>
@@ -223,7 +233,7 @@
             <xs:element name="citoyens" type="CITOYENS"/>
             <xs:element name="lieux" type="LIEUX"/>
             <xs:element name="events" type="EVENTS"/>
-            <xs:element name="indicateurDeSanté" >
+            <xs:element name="indicateur-de-sante" >
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element ref="indicateur"/>
@@ -278,8 +288,8 @@
     <!--  Definition des complexTypes du Citoyen -->
     <xs:complexType name="IP">
         <xs:sequence>
-            <xs:element ref="Nom"/>
-            <xs:element ref="Prenom"/>
+            <xs:element ref="nom"/>
+            <xs:element ref="prenom"/>
             <xs:element name="dateDeNaissance" type="xs:date"/>
             <xs:element name="poids" type="xs:integer"/>
             <xs:element name="age" type="xs:integer"/>
@@ -332,21 +342,21 @@
 
     <xs:complexType name="STATUTS">
         <xs:sequence>
-            <xs:element name="statutInfection" >
+            <xs:element name="statut-infection" >
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element ref="valeur"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="statutImmunisation">
+            <xs:element name="statut-immunisation">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element ref="valeur"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="statutVaccination">
+            <xs:element name="statut-vaccination">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element ref="valeur"/>
@@ -355,10 +365,6 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-
-
-
-
 
 
 

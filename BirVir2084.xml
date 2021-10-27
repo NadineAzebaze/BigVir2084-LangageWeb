@@ -5,7 +5,7 @@
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://myBigVir.org/   BigVir2084.xsd">
 
-            <agenceGouvernement>
+            <agence-gouvernementale>
                 <agents>
                     <agent idA="1"  />
                     <medecin idM="1">
@@ -14,16 +14,16 @@
                         </Liste>
                     </medecin>
                 </agents>
-               <valeurIndicateur refIndicateur="1" />
-            </agenceGouvernement>
+               <valeur-indicateur refIndicateur="1" />
+            </agence-gouvernementale>
 
 
-            <ObservatoireMondial>
+            <observatoire-mondial>
                 <citoyens>
                     <citoyen idC="1">
                         <informations-personnelles>
-                            <Nom>Mervile</Nom>
-                            <Prenom>Thibaut</Prenom>
+                            <nom>Mervile</nom>
+                            <prenom>Thibaut</prenom>
                             <dateDeNaissance>1992-05-29</dateDeNaissance>
                             <poids>70</poids>
                             <age>29</age>
@@ -42,15 +42,15 @@
                                 <date>2021-04-03</date>
                             </consultations>
                             <statut>
-                                <statutInfection>
+                                <statut-infection>
                                     <valeur>true</valeur>
-                                </statutInfection>
-                                <statutImmunisation>
+                                </statut-infection>
+                                <statut-immunisation>
                                     <valeur>true</valeur>
-                                </statutImmunisation>
-                                <statutVaccination>
+                                </statut-immunisation>
+                                <statut-vaccination>
                                     <valeur>true</valeur>
-                                </statutVaccination>
+                                </statut-vaccination>
                             </statut>
                         </antecedents-medicaux>
                         <historique-social>
@@ -61,8 +61,8 @@
 
                     <citoyen idC="2">
                         <informations-personnelles>
-                            <Nom>Joly</Nom>
-                            <Prenom>Carole</Prenom>
+                            <nom>Joly</nom>
+                            <prenom>Carole</prenom>
                             <dateDeNaissance>1992-05-29</dateDeNaissance>
                             <poids>60</poids>
                             <age>29</age>
@@ -85,15 +85,15 @@
                             </consultations>
             
                             <statut>
-                               <statutInfection>
+                               <statut-infection>
                                    <valeur>true</valeur>
-                               </statutInfection>
-                               <statutImmunisation>
+                               </statut-infection>
+                               <statut-immunisation>
                                    <valeur>true</valeur>
-                               </statutImmunisation>
-                               <statutVaccination>
+                               </statut-immunisation>
+                               <statut-vaccination>
                                    <valeur>true</valeur>
-                               </statutVaccination>
+                               </statut-vaccination>
                             </statut>
                         </antecedents-medicaux>
             
@@ -105,8 +105,8 @@
 
                    <citoyen idC="3">
                        <informations-personnelles>
-                           <Nom>Dylan</Nom>
-                           <Prenom>Bob</Prenom>
+                           <nom>Dylan</nom>
+                           <prenom>Bob</prenom>
                            <dateDeNaissance>1994-02-01</dateDeNaissance>
                            <poids>80</poids>
                            <age>27</age>
@@ -122,15 +122,15 @@
                                <intitule>tumeur unique et de petite taille</intitule>
                            </tests>
                            <statut>
-                               <statutInfection>
+                               <statut-infection>
                                    <valeur>true</valeur>
-                               </statutInfection>
-                               <statutImmunisation>
+                               </statut-infection>
+                               <statut-immunisation>
                                    <valeur>false</valeur>
-                               </statutImmunisation>
-                               <statutVaccination>
+                               </statut-immunisation>
+                               <statut-vaccination>
                                    <valeur>true</valeur>
-                               </statutVaccination>
+                               </statut-vaccination>
                            </statut>
                        </antecedents-medicaux>
                    </citoyen>
@@ -178,12 +178,12 @@
                     </event>
                 </events>
 
-                <indicateurDeSanté indicateur="1">
+                <indicateur-de-sante indicateur="1">
                     <indicateur>
                         <domaine>mortalité</domaine>
                         <pourcentage>8</pourcentage>
                     </indicateur>
-                </indicateurDeSanté>
-            </ObservatoireMondial>
+                </indicateur-de-sante>
+            </observatoire-mondial>
 
 </BigVir>
