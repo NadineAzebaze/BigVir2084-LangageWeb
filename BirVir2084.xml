@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
+<?xml-stylesheet type="text/xsl" href="transfor1.xsl" ?>
 
 <BigVir xmlns="http://myBigVir.org/"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -42,7 +42,7 @@
                         <antecedents-medicaux>
                             <hospitalisations>
                                 <maladie>
-                                    <nom> Rhinopharyngite aiguÃ«</nom>
+                                    <nom> Rhinopharyngite aiguë</nom>
                                     <type>maladie respiratoire</type>
                                 </maladie>
                                 <dateEntree>2021-04-04</dateEntree>
@@ -73,7 +73,7 @@
                                     <valeur>true</valeur>
                                 </statut-immunisation>
                                 <statut-vaccination>
-                                    <valeur>true</valeur>
+                                    <valeur>false</valeur>
                                 </statut-vaccination>
                             </statut>
                         </antecedents-medicaux>
@@ -159,7 +159,7 @@
                            </hospitalisations>
                            <tests>
                               <test>
-                                  <type>ischÃ©mie</type>
+                                  <type>ischémie</type>
                                   <resultat>true</resultat>
                               </test>
                            </tests>
@@ -284,7 +284,7 @@
                     <antecedents-medicaux>
                         <hospitalisations>
                             <maladie>
-                                <nom>Cancer du col utÃ©rin</nom>
+                                <nom>Cancer du col utérin</nom>
                                 <type>cancers</type>
                             </maladie>
                             <dateEntree>2021-02-04</dateEntree>
@@ -338,7 +338,7 @@
                         <hospitalisations>
                             <maladie>
                                 <nom>Huntington</nom>
-                                <type>maladie gÃ©nÃ©tique</type>
+                                <type>maladie génétique</type>
                             </maladie>
                             <dateEntree>2021-09-20</dateEntree>
                             <dateSortie>2021-09-25</dateSortie>
@@ -349,7 +349,7 @@
                         </hospitalisations>
                         <tests>
                            <test>
-                               <type>Puces Ã  ADN</type>
+                               <type>Puces à ADN</type>
                                <resultat>true</resultat>
                            </test>
                         </tests>
@@ -382,8 +382,8 @@
                     <antecedents-medicaux>
                         <hospitalisations>
                             <maladie>
-                                <nom>HÃ©mochromatose</nom>
-                                <type>maladie gÃ©nÃ©tique</type>
+                                <nom>Hémochromatose</nom>
+                                <type>maladie génétique</type>
                             </maladie>
                             <dateEntree>2021-10-20</dateEntree>
                             <dateSortie>2021-10-22</dateSortie>
@@ -428,7 +428,7 @@
                         <hospitalisations>
                             <maladie>
                                 <nom>Huntington</nom>
-                                <type>maladie gÃ©nÃ©tique</type>
+                                <type>maladie génétique</type>
                             </maladie>
                             <dateEntree>2021-09-20</dateEntree>
                             <dateSortie>2021-09-25</dateSortie>
@@ -439,7 +439,7 @@
                         </hospitalisations>
                         <tests>
                            <test>
-                               <type>Puces Ã  ADN</type>
+                               <type>Puces à ADN</type>
                                <resultat>true</resultat>
                            </test>
                         </tests>
@@ -464,7 +464,7 @@
                 <citoyen idC="10">
                     <informations-personnelles>
                         <nom>Masson</nom>
-                        <prenom>ClÃ©mence</prenom>
+                        <prenom>Clémence</prenom>
                         <dateDeNaissance>1989-11-20</dateDeNaissance>
                         <poids>65</poids>
                         <age>31</age>
@@ -512,7 +512,7 @@
                 
                 <lieux>
                     <lieu refeta="1">
-                        <Type>centre de santÃ©</Type>
+                        <Type>centre de santé</Type>
                         <affluence>3</affluence>
                         <adresse>11 rue Circulaire</adresse>
                         <ville>Paris</ville>
@@ -522,7 +522,7 @@
                         </liste-present>
                     </lieu>
                     <lieu refeta="2">
-                        <Type>centre de santÃ©</Type>
+                        <Type>centre de santé</Type>
                         <affluence>4</affluence>
                         <adresse>12 rue saint Augustin</adresse>
                         <ville>Paris</ville>
@@ -544,7 +544,7 @@
                         </liste-present>
                     </lieu>
                     <lieu refeta="4">
-                        <Type>musÃ©e</Type>
+                        <Type>musée</Type>
                         <affluence>2</affluence>
                         <adresse>10 rue de BelleVille</adresse>
                         <ville>Paris</ville>
@@ -566,7 +566,7 @@
                     <lieu refeta="6">
                         <Type>place publique</Type>
                         <affluence>8</affluence>
-                        <adresse>5 rue MaspÃ©ro</adresse>
+                        <adresse>5 rue Maspéro</adresse>
                         <ville>Paris</ville>
                         <liste-present>
                             <citoyen idC="1"></citoyen>
@@ -617,11 +617,7 @@
                 </events>
                 <indicateur-de-sante indicateur="1">
                     <indicateur>
-                        <domaine>mortalitÃ©</domaine>
-                        <pourcentage>8</pourcentage>
-                    </indicateur>
-                    <indicateur>
-                        <domaine>mortalitÃ©</domaine>
+                        <domaine>mortalité</domaine>
                         <pourcentage>8</pourcentage>
                     </indicateur>
                 </indicateur-de-sante>
