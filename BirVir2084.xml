@@ -79,6 +79,7 @@
                 </antecedents-medicaux>
                 <historique-social>
                     <etablissement refeta="1" />
+                    <etablissement refeta="3" />
                     <evenement refevent="1" />
                 </historique-social>
             </citoyen>
@@ -132,6 +133,7 @@
 
                 <historique-social>
                     <etablissement refeta="2" />
+                    <etablissement refeta="3" />
                     <evenement refevent="2" />
                 </historique-social>
             </citoyen>
