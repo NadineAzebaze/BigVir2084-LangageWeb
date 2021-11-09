@@ -26,3 +26,8 @@ Pour les tests pas clair ce qui est un résultat et ce qui est un intitulé, et 
    Pas de définition de types simples -> TODO.  A CORRIGER Nad !!!!!!!
 
   Déclaration des key keyref OK
+
+
+  CAS xslt gérer:
+   classer les citoyens selon le nombre d'hospitalisations par ordre croissant, si le nombre d'hospitalisation est égale à 2,
+   on affiche les hospitalisations du plus récent au plus ancien

@@ -347,6 +347,18 @@
                         </medecin>
                         <hopital hop="1" />
                     </hospitalisations>
+                    <hospitalisations>
+                        <maladie>
+                            <nom>Hémocromatose</nom>
+                            <type>maladie génétique</type>
+                        </maladie>
+                        <dateEntree>2020-03-15</dateEntree>
+                        <dateSortie>2020-03-21</dateSortie>
+                        <medecin idM="10">
+                            <Liste></Liste>
+                        </medecin>
+                        <hopital hop="1"/>
+                    </hospitalisations>
                     <tests>
                         <test>
                             <type>Puces à ADN</type>
@@ -419,14 +431,14 @@
             <citoyen idC="9">
                 <informations-personnelles>
                     <nom>Andre</nom>
-                    <prenom>Katrine</prenom>
+                    <prenom>Pyrénée</prenom>
                     <dateDeNaissance>1990-03-20</dateDeNaissance>
                     <poids>70</poids>
                     <age>32</age>
                 </informations-personnelles>
                 <antecedents-medicaux>
-                    <hospitalisations/>
-                        <!--maladie>
+                    <!--hospitalisations/>
+                        <maladie>
                             <nom>Huntington</nom>
                             <type>maladie génétique</type>
                         </maladie>
@@ -470,8 +482,8 @@
                     <age>31</age>
                 </informations-personnelles>
                 <antecedents-medicaux>
-                    <hospitalisations/>
-                        <!--maladie>
+                    <!--hospitalisations/>
+                        <maladie>
                             <nom>Aagenaes</nom>
                             <type>maladie rare</type>
                         </maladie>

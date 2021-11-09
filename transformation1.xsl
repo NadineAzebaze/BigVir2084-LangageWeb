@@ -2,7 +2,7 @@
 
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="html" indent="yes"/>
+    <xsl:output method="xml" indent="yes"/>
 
     <xsl:template match="BigVir">
         <html>
@@ -11,12 +11,16 @@
             </head>
 
             <body>
-                <h1>VOICI DES AGENTS N'AYANT AUCUNE HOSPITALISATION</h1>
+                <h1>VOICI DES <xsl:value-of select="count(./observatoire-mondial/citoyens/citoyen/antecedents-medicaux[count(hospitalisations) = 0])"/> CITOYENS N'AYANT AUCUNE HOSPITALISATION</h1>
 
                 <xsl:for-each select="./observatoire-mondial/citoyens/citoyen">
-                              <xsl:if test="count(./antecedents-medicaux/hospitalisations)=1">
-                                  aaaaaaa
-                              </xsl:if>
+                    <xsl:sort select="count(./antecedents-medicaux/hospitalisations)"/>
+                    <p>
+                        <xsl:value-of select="./informations-personnelles/nom"/>
+                        <xsl:text>  </xsl:text>
+                        <xsl:value-of select="./informations-personnelles/prenom"/>
+                        son nombre d'hospitalisations est de: <xsl:value-of select="count(./antecedents-medicaux/hospitalisations)"/>
+                    </p>
                 </xsl:for-each>
 
             </body>
