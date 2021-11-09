@@ -218,7 +218,6 @@
                     </statut>
                 </antecedents-medicaux>
                 <historique-social>
-                    <etablissement refeta="4" />
                     <etablissement refeta="5" />
                     <etablissement refeta="6" />
                 </historique-social>
@@ -380,7 +379,6 @@
                     </statut>
                 </antecedents-medicaux>
                 <historique-social>
-                    <etablissement refeta="4" />
                     <etablissement refeta="5" />
                     <etablissement refeta="6" />
                 </historique-social>
@@ -470,7 +468,6 @@
                     </statut>
                 </antecedents-medicaux>
                 <historique-social>
-                    <etablissement refeta="4" />
                     <etablissement refeta="5" />
                     <etablissement refeta="6" />
                 </historique-social>
@@ -563,7 +560,6 @@
                 <adresse>10 rue de BelleVille</adresse>
                 <ville>Paris</ville>
                 <liste-present>
-                    <citoyen idC="2"></citoyen>
                 </liste-present>
             </lieu>
             <lieu refeta="5">
@@ -635,8 +631,8 @@
                 <pourcentage>8</pourcentage>
             </indicateur>
             <indicateur>
-                <domaine>mortalité</domaine>
-                <pourcentage>8</pourcentage>
+                <domaine>Espérance de vie</domaine>
+                <pourcentage>77</pourcentage>
             </indicateur>
         </indicateur-de-sante>
     </observatoire-mondial>
