@@ -11,15 +11,36 @@
             </head>
 
             <body>
-                <h1>VOICI DES <xsl:value-of select="count(./observatoire-mondial/citoyens/citoyen/antecedents-medicaux[count(hospitalisations) = 0])"/> CITOYENS N'AYANT AUCUNE HOSPITALISATION</h1>
+                <h3> <xsl:value-of select="count(./observatoire-mondial/citoyens/citoyen/antecedents-medicaux[count(hospitalisations) > 0])"/> CITOYENS ont déjà été hospitalisées!
+                </h3>
 
                 <xsl:for-each select="./observatoire-mondial/citoyens/citoyen">
                     <xsl:sort select="count(./antecedents-medicaux/hospitalisations)"/>
                     <p>
-                        <xsl:value-of select="./informations-personnelles/nom"/>
-                        <xsl:text>  </xsl:text>
-                        <xsl:value-of select="./informations-personnelles/prenom"/>
-                        son nombre d'hospitalisations est de: <xsl:value-of select="count(./antecedents-medicaux/hospitalisations)"/>
+                        <p>
+                            <span style="color:#ff0000">
+                                <xsl:value-of select="./informations-personnelles/nom"/>
+                                <xsl:text>  </xsl:text>
+                                <xsl:value-of select="./informations-personnelles/prenom"/>
+                            </span>
+
+                           ; Son nombre d'hospitalisations est de: <xsl:value-of select="count(./antecedents-medicaux/hospitalisations)"/>
+                        </p>
+
+                        <p>
+                            <xsl:if test="count(./antecedents-medicaux/hospitalisations) > 1">
+                                Ses hospitalisations classées de la plus récente à la plus ancienne sont: <br/>
+                                <xsl:for-each select="./antecedents-medicaux/hospitalisations">
+                                    <xsl:sort select="dateEntree" data-type="number" order="ascending"/>
+                                    <em>
+                                        Maladie: <xsl:value-of select="maladie/nom"/> <br/></em>
+                                        date d'entrée: <xsl:value-of select="dateEntree"/> <br/>
+                                        date de sortie: <xsl:value-of select="dateSortie"/> <br/>
+
+                                </xsl:for-each>
+                            </xsl:if>
+                        </p>
+
                     </p>
                 </xsl:for-each>
 
