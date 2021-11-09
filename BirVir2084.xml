@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="transfor1.xsl" ?>
 
-<?xml-stylesheet type="text/xsl" href="transformation1.xsl"?>
 <BigVir xmlns="http://myBigVir.org/"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://myBigVir.org/   BigVir2084.xsd">
 
-            <agencegouvernementale>
+            <agence-gouvernementale>
                 <agents>
                     <agent idA="10"/>
                     <medecin idM="7">
@@ -28,7 +28,7 @@
                     </medecin>
                 </agents>
                <valeur-indicateur refIndicateur="1" />
-            </agencegouvernementale>
+            </agence-gouvernementale>
             <observatoire-mondial>
                 <citoyens>
                     <citoyen idC="1">
@@ -73,7 +73,7 @@
                                     <valeur>true</valeur>
                                 </statut-immunisation>
                                 <statut-vaccination>
-                                    <valeur>true</valeur>
+                                    <valeur>false</valeur>
                                 </statut-vaccination>
                             </statut>
                         </antecedents-medicaux>
@@ -616,10 +616,6 @@
                     </event>
                 </events>
                 <indicateur-de-sante indicateur="1">
-                    <indicateur>
-                        <domaine>mortalité</domaine>
-                        <pourcentage>8</pourcentage>
-                    </indicateur>
                     <indicateur>
                         <domaine>mortalité</domaine>
                         <pourcentage>8</pourcentage>

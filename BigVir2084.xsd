@@ -110,7 +110,7 @@
     <xs:element name="indicateur">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="domaine" type="xs:string"/>
+                <xs:element name="domaine" type="xs:string" />
                 <xs:element name="pourcentage" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>
