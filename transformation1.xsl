@@ -4,7 +4,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html" indent="yes"/>
 
-    <xsl:template match="/">
+    <xsl:template match="BigVir">
         <html>
             <head>
                 <title> La base de donnee de BigVir </title>
@@ -13,7 +13,11 @@
             <body>
                 <h1>VOICI DES AGENTS N'AYANT AUCUNE HOSPITALISATION</h1>
 
-                <xsl:apply-templates/>
+                <xsl:for-each select="./observatoire-mondial/citoyens/citoyen">
+                              <xsl:if test="count(./antecedents-medicaux/hospitalisations)=1">
+                                  aaaaaaa
+                              </xsl:if>
+                </xsl:for-each>
 
             </body>
 
@@ -21,13 +25,6 @@
 
     </xsl:template>
 
-    <xsl:template match="/agence-gouvernementale">
-        <xsl:for-each select="./agents/agent">
-            <xsl:if test="count(/antecedents-medicaux/hospitalisations) = 0">
-                <xsl:value-of select="/informations-personnelles/nom"/>
-            </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
 
 
 </xsl:stylesheet>

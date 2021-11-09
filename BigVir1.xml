@@ -6,6 +6,8 @@
     <agence-gouvernementale>
         <agents>
             <agent idA="10"/>
+            <agent idA="1"/>
+            <agent idA="9"/>
             <medecin idM="7">
                 <Liste>
                     <patient idP="1" />
@@ -423,8 +425,8 @@
                     <age>32</age>
                 </informations-personnelles>
                 <antecedents-medicaux>
-                    <hospitalisations>
-                        <maladie>
+                    <hospitalisations/>
+                        <!--maladie>
                             <nom>Huntington</nom>
                             <type>maladie génétique</type>
                         </maladie>
@@ -434,7 +436,7 @@
                             <Liste></Liste>
                         </medecin>
                         <hopital hop="2" />
-                    </hospitalisations>
+                    </hospitalisations-->
                     <tests>
                         <test>
                             <type>Puces à ADN</type>
@@ -468,8 +470,8 @@
                     <age>31</age>
                 </informations-personnelles>
                 <antecedents-medicaux>
-                    <hospitalisations>
-                        <maladie>
+                    <hospitalisations/>
+                        <!--maladie>
                             <nom>Aagenaes</nom>
                             <type>maladie rare</type>
                         </maladie>
@@ -479,7 +481,7 @@
                             <Liste></Liste>
                         </medecin>
                         <hopital hop="2" />
-                    </hospitalisations>
+                    </hospitalisations-->
                     <tests>
                         <test>
                             <type>HFE</type>
