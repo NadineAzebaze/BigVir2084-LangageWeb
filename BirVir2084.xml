@@ -16,8 +16,6 @@
                 </agents>
                <valeur-indicateur refIndicateur="1" />
             </agence-gouvernementale>
-
-
             <observatoire-mondial>
                 <citoyens>
                     <citoyen idC="1">
@@ -30,16 +28,29 @@
                         </informations-personnelles>
                         <antecedents-medicaux>
                             <hospitalisations>
-                                <maladie></maladie>
+                                <maladie>
+                                    <nom> Rhinopharyngite aiguë</nom>
+                                    <type>maladie respiratoire</type>
+                                </maladie>
                                 <dateEntree>2021-04-04</dateEntree>
                                 <dateSortie>2021-04-20</dateSortie>
+                                <medecin idM="">
+                                    <Liste></Liste>
+                                </medecin>
+                                <hopital hop="" />
                             </hospitalisations>
                             <tests>
-                                <resultat>diab�te de type1</resultat>
-                                <intitule>le taux de sucre est sup�rieur � 1,26g/l</intitule>
+                                <test>
+                                    <type></type>
+                                    <resultat>true</resultat>
+                                </test>
                             </tests>
                             <consultations>
                                 <date>2021-04-03</date>
+                                <medecin idM="">
+                                    <Liste></Liste>
+                                </medecin>
+                                <hopital hop="" />
                             </consultations>
                             <statut>
                                 <statut-infection>
@@ -70,20 +81,30 @@
                         
                         <antecedents-medicaux>
                             <hospitalisations>
-                                <maladie>Covid19</maladie>
-                                <dateEntree>2021-08-10</dateEntree>
-                                <dateSortie>2021-08-25</dateSortie>
+                                <maladie>
+                                    <nom></nom>
+                                    <type>maladie respiratoire</type>
+                                </maladie>
+                                <dateEntree>2021-09-01</dateEntree>
+                                <dateSortie>2021-09-09</dateSortie>
+                                <medecin idM="">
+                                    <Liste></Liste>
+                                </medecin>
+                                <hopital hop="" />
                             </hospitalisations>
-            
                             <tests>
-                                <resultat>PCR positif</resultat>
-                                <intitule>pr�sence des symptomes de covid</intitule>
+                                <test>
+                                    <type></type>
+                                    <resultat>true</resultat>
+                                </test>
                             </tests>
-            
                             <consultations>
-                                <date>2021-08-09</date>
+                                <date>2021-09-12</date>
+                                <medecin idM="">
+                                    <Liste></Liste>
+                                </medecin>
+                                <hopital hop="" />
                             </consultations>
-            
                             <statut>
                                <statut-infection>
                                    <valeur>true</valeur>
@@ -113,13 +134,22 @@
                        </informations-personnelles>
                        <antecedents-medicaux>
                            <hospitalisations>
-                               <maladie>Cancer</maladie>
+                               <maladie>
+                                   <nom></nom>
+                                   <type>maladie respiratoire</type>
+                               </maladie>
                                <dateEntree>2021-09-06</dateEntree>
                                <dateSortie>2021-10-06</dateSortie>
+                               <medecin idM="">
+                                   <Liste></Liste>
+                               </medecin>
+                               <hopital hop="" />
                            </hospitalisations>
                            <tests>
-                               <resultat>Cancer de stade 1</resultat>
-                               <intitule>tumeur unique et de petite taille</intitule>
+                              <test>
+                                  <type></type>
+                                  <resultat>true</resultat>
+                              </test>
                            </tests>
                            <statut>
                                <statut-infection>
@@ -138,18 +168,82 @@
                 
                 <lieux>
                     <lieu refeta="1">
-                        <affluence>1</affluence>
+                        <Type>centre de santé</Type>
+                        <affluence>3</affluence>
                         <adresse>11 rue Circulaire</adresse>
-                        <ville>Paris</ville>
-                        <liste-present></liste-present>
-                    </lieu>
-                    <lieu refeta="2">
-                        <affluence>2</affluence>
-                        <adresse>12 rue saint Augustin</adresse>
                         <ville>Paris</ville>
                         <liste-present>
                             <citoyen idC="1"></citoyen>
                             <citoyen idC="2"></citoyen>
+                        </liste-present>
+                    </lieu>
+                    <lieu refeta="2">
+                        <Type>centre de santé</Type>
+                        <affluence>4</affluence>
+                        <adresse>12 rue saint Augustin</adresse>
+                        <ville>Paris</ville>
+                        <liste-present>
+                            <citoyen idC="3"></citoyen>
+                            <citoyen idC="4"></citoyen>
+                        </liste-present>
+                    </lieu>
+                    <lieu refeta="3">
+                        <Type>centre commercial</Type>
+                        <affluence>5</affluence>
+                        <adresse>8 boulevard Victor Hugo</adresse>
+                        <ville>Paris</ville>
+                        <liste-present>
+                            <citoyen idC="1"></citoyen>
+                            <citoyen idC="2"></citoyen>
+                            <citoyen idC="3"></citoyen>
+                            <citoyen idC="4"></citoyen>
+                        </liste-present>
+                    </lieu>
+                    <lieu refeta="4">
+                        <Type>musée</Type>
+                        <affluence>2</affluence>
+                        <adresse>10 rue de BelleVille</adresse>
+                        <ville>Paris</ville>
+                        <liste-present>
+                            <citoyen idC="2"></citoyen>
+                        </liste-present>
+                    </lieu>
+                    <lieu refeta="5">
+                        <Type>salle de sport</Type>
+                        <affluence>4</affluence>
+                        <adresse>5 rue Saint Martin</adresse>
+                        <ville>Paris</ville>
+                        <liste-present>
+                            <citoyen idC="1"></citoyen>
+                            <citoyen idC="3"></citoyen>
+                            <citoyen idC="4"></citoyen>
+                        </liste-present>
+                    </lieu>
+                    <lieu refeta="6">
+                        <Type>place publique</Type>
+                        <affluence>8</affluence>
+                        <adresse>5 rue Maspéro</adresse>
+                        <ville>Paris</ville>
+                        <liste-present>
+                            <citoyen idC="1"></citoyen>
+                            <citoyen idC="2"></citoyen>
+                            <citoyen idC="3"></citoyen>
+                            <citoyen idC="4"></citoyen>
+                            <citoyen idC="5"></citoyen>
+                        </liste-present>
+                    </lieu>
+                    <lieu refeta="7">
+                        <Type>Ecole</Type>
+                        <affluence>8</affluence>
+                        <adresse>6 rue de la Pompe</adresse>
+                        <ville>Paris</ville>
+                        <liste-present>
+                            <citoyen idC="1"></citoyen>
+                            <citoyen idC="2"></citoyen>
+                            <citoyen idC="3"></citoyen>
+                            <citoyen idC="4"></citoyen>
+                            <citoyen idC="5"></citoyen>
+                            <citoyen idC="6"></citoyen>
                         </liste-present>
                     </lieu>
                 </lieux>

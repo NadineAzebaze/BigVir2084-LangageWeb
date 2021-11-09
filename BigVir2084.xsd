@@ -172,7 +172,7 @@
 
     <xs:complexType name="MALADIE">
         <xs:sequence>
-            <xsl:element name="nom" type="xs:string"/>
+            <xs:element name="nom" type="xs:string"/>
             <xs:element name="type" type="TYPEMALADIE"/>
         </xs:sequence>
     </xs:complexType>
