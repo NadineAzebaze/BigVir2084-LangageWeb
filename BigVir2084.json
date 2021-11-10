@@ -1,0 +1,224 @@
+{
+    "BigVir": {
+        "-xmlns": "http://myBigVir.org/",
+        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "-xsi:schemaLocation": "http://myBigVir.org/   BigVir2084.xsd",
+        "agenceGouvernement": {
+            "agents": {
+                "agent": {
+                    "-idA": "1"
+                },
+                "medecin": {
+                    "-idM": "1",
+                    "Liste": {
+                        "patient": {
+                            "-idP": "1"
+                        }
+                    }
+                }
+            },
+            "valeurIndicateur": {
+                "-refIndicateur": "1"
+            }
+        },
+        "ObservatoireMondial": {
+            "citoyens": {
+                "citoyen": [
+                    {
+                        "-idC": "1",
+                        "informationsPersonnelles": {
+                            "Nom": "Mervile",
+                            "Prenom": "Thibaut",
+                            "dateDeNaissance": "1992-05-29",
+                            "poids": "70",
+                            "age": "29"
+                        },
+                        "antecedentsMedicaux": {
+                            "hospitalisations": {
+                                "maladie": {},
+                                "dateEntree": "2021-04-04",
+                                "dateSortie": "2021-04-20"
+                            },
+                            "tests": {
+                                "resultat": "diab�te de type1",
+                                "intitule": "le taux de sucre est sup�rieur � 1,26g/l"
+                            },
+                            "consultations": {
+                                "date": "2021-04-03"
+                            },
+                            "statut": {
+                                "statutInfection": {
+                                    "valeur": "true"
+                                },
+                                "statutImmunisation": {
+                                    "valeur": "true"
+                                },
+                                "statutVaccination": {
+                                    "valeur": "true"
+                                }
+                            }
+                        },
+                        "historiqueSocial": {
+                            "etablissement": {
+                                "-refeta": "1"
+                            },
+                            "evenement": {
+                                "-refevent": "1"
+                            }
+                        }
+                    },
+                    {
+                        "-idC": "2",
+                        "informationsPersonnelles": {
+                            "Nom": "Joly",
+                            "Prenom": "Carole",
+                            "dateDeNaissance": "1992-05-29",
+                            "poids": "60",
+                            "age": "29"
+                        },
+                        "antecedentsMedicaux": {
+                            "hospitalisations": {
+                                "maladie": "Covid19",
+                                "dateEntree": "2021-08-10",
+                                "dateSortie": "2021-08-25"
+                            },
+                            "tests": {
+                                "resultat": "PCR positif",
+                                "intitule": "pr�sence des symptomes de covid"
+                            },
+                            "consultations": {
+                                "date": "2021-08-09"
+                            },
+                            "statut": {
+                                "statutInfection": {
+                                    "valeur": "true"
+                                },
+                                "statutImmunisation": {
+                                    "valeur": "true"
+                                },
+                                "statutVaccination": {
+                                    "valeur": "true"
+                                }
+                            }
+                        },
+                        "historiqueSocial": {
+                            "etablissement": {
+                                "-refeta": "2"
+                            },
+                            "evenement": {
+                                "-refevent": "2"
+                            }
+                        }
+                    },
+                    {
+                        "-idC": "3",
+                        "informationsPersonnelles": {
+                            "Nom": "Dylan",
+                            "Prenom": "Bob",
+                            "dateDeNaissance": "1994-02-01",
+                            "poids": "80",
+                            "age": "27"
+                        },
+                        "antecedentsMedicaux": {
+                            "hospitalisations": {
+                                "maladie": "Cancer",
+                                "dateEntree": "2021-09-06",
+                                "dateSortie": "2021-10-06"
+                            },
+                            "tests": {
+                                "resultat": "Cancer de stade 1",
+                                "intitule": "tumeur unique et de petite taille"
+                            },
+                            "statut": {
+                                "statutInfection": {
+                                    "valeur": "true"
+                                },
+                                "statutImmunisation": {
+                                    "valeur": "false"
+                                },
+                                "statutVaccination": {
+                                    "valeur": "true"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "lieux": {
+                "lieu": [
+                    {
+                        "-refeta": "1",
+                        "affluence": "1",
+                        "adresse": "11 rue Circulaire",
+                        "ville": "Paris",
+                        "listePrésent": {}
+                    },
+                    {
+                        "-refeta": "2",
+                        "affluence": "2",
+                        "adresse": "12 rue saint Augustin",
+                        "ville": "Paris",
+                        "listePrésent": {
+                            "citoyen": [
+                                {
+                                    "-idC": "1"
+                                },
+                                {
+                                    "-idC": "2"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "events": {
+                "event": [
+                    {
+                        "-idevent": "1",
+                        "date": "2021-04-21",
+                        "affluence": "70",
+                        "adresse": "17 Boulevard Victor Hugo",
+                        "ville": "Paris",
+                        "listePrésent": {
+                            "citoyen": [
+                                {
+                                    "-idC": "3"
+                                },
+                                {
+                                    "-idC": "2"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "-idevent": "2",
+                        "date": "2021-05-01",
+                        "affluence": "60",
+                        "adresse": "5 Boulevard Gambetta",
+                        "ville": "Paris",
+                        "listePrésent": {
+                            "citoyen": [
+                                {
+                                    "-idC": "1"
+                                },
+                                {
+                                    "-idC": "2"
+                                },
+                                {
+                                    "-idC": "3"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "indicateurDeSanté": {
+                "-indicateur": "1",
+                "indicateur": {
+                    "domaine": "mortalité",
+                    "pourcentage": "8"
+                }
+            }
+        }
+    }
+}
