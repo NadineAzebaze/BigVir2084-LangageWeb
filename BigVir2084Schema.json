@@ -1,0 +1,870 @@
+{
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+        "BigVir": {
+        "type": "object",
+        "properties": {
+        "-xmlns": {
+        "type": "string"
+        },
+        "-xmlns:xsi": {
+        "type": "string"
+        },
+        "-xsi:schemaLocation": {
+        "type": "string"
+        },
+        "agenceGouvernement": {
+        "type": "object",
+        "properties": {
+        "agents": {
+        "type": "object",
+        "properties": {
+        "agent": {
+        "type": "object",
+        "properties": {
+        "-idA": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-idA"
+        ]
+        },
+        "medecin": {
+        "type": "object",
+        "properties": {
+        "-idM": {
+        "type": "string"
+        },
+        "Liste": {
+        "type": "object",
+        "properties": {
+        "patient": {
+        "type": "object",
+        "properties": {
+        "-idP": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-idP"
+        ]
+        }
+        },
+        "required": [
+        "patient"
+        ]
+        }
+        },
+        "required": [
+        "-idM",
+        "Liste"
+        ]
+        }
+        },
+        "required": [
+        "agent",
+        "medecin"
+        ]
+        },
+        "valeurIndicateur": {
+        "type": "object",
+        "properties": {
+        "-refIndicateur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-refIndicateur"
+        ]
+        }
+        },
+        "required": [
+        "agents",
+        "valeurIndicateur"
+        ]
+        },
+        "ObservatoireMondial": {
+        "type": "object",
+        "properties": {
+        "citoyens": {
+        "type": "object",
+        "properties": {
+        "citoyen": {
+        "type": "array",
+        "items": [
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        },
+        "informationsPersonnelles": {
+        "type": "object",
+        "properties": {
+        "Nom": {
+        "type": "string"
+        },
+        "Prenom": {
+        "type": "string"
+        },
+        "dateDeNaissance": {
+        "type": "string"
+        },
+        "poids": {
+        "type": "string"
+        },
+        "age": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "Nom",
+        "Prenom",
+        "dateDeNaissance",
+        "poids",
+        "age"
+        ]
+        },
+        "antecedentsMedicaux": {
+        "type": "object",
+        "properties": {
+        "hospitalisations": {
+        "type": "object",
+        "properties": {
+        "maladie": {
+        "type": "object"
+        },
+        "dateEntree": {
+        "type": "string"
+        },
+        "dateSortie": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "maladie",
+        "dateEntree",
+        "dateSortie"
+        ]
+        },
+        "tests": {
+        "type": "object",
+        "properties": {
+        "resultat": {
+        "type": "string"
+        },
+        "intitule": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "resultat",
+        "intitule"
+        ]
+        },
+        "consultations": {
+        "type": "object",
+        "properties": {
+        "date": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "date"
+        ]
+        },
+        "statut": {
+        "type": "object",
+        "properties": {
+        "statutInfection": {
+        "type": "object",
+        "properties": {
+        "valeur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "valeur"
+        ]
+        },
+        "statutImmunisation": {
+        "type": "object",
+        "properties": {
+        "valeur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "valeur"
+        ]
+        },
+        "statutVaccination": {
+        "type": "object",
+        "properties": {
+        "valeur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "valeur"
+        ]
+        }
+        },
+        "required": [
+        "statutInfection",
+        "statutImmunisation",
+        "statutVaccination"
+        ]
+        }
+        },
+        "required": [
+        "hospitalisations",
+        "tests",
+        "consultations",
+        "statut"
+        ]
+        },
+        "historiqueSocial": {
+        "type": "object",
+        "properties": {
+        "etablissement": {
+        "type": "object",
+        "properties": {
+        "-refeta": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-refeta"
+        ]
+        },
+        "evenement": {
+        "type": "object",
+        "properties": {
+        "-refevent": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-refevent"
+        ]
+        }
+        },
+        "required": [
+        "etablissement",
+        "evenement"
+        ]
+        }
+        },
+        "required": [
+        "-idC",
+        "informationsPersonnelles",
+        "antecedentsMedicaux",
+        "historiqueSocial"
+        ]
+        },
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        },
+        "informationsPersonnelles": {
+        "type": "object",
+        "properties": {
+        "Nom": {
+        "type": "string"
+        },
+        "Prenom": {
+        "type": "string"
+        },
+        "dateDeNaissance": {
+        "type": "string"
+        },
+        "poids": {
+        "type": "string"
+        },
+        "age": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "Nom",
+        "Prenom",
+        "dateDeNaissance",
+        "poids",
+        "age"
+        ]
+        },
+        "antecedentsMedicaux": {
+        "type": "object",
+        "properties": {
+        "hospitalisations": {
+        "type": "object",
+        "properties": {
+        "maladie": {
+        "type": "string"
+        },
+        "dateEntree": {
+        "type": "string"
+        },
+        "dateSortie": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "maladie",
+        "dateEntree",
+        "dateSortie"
+        ]
+        },
+        "tests": {
+        "type": "object",
+        "properties": {
+        "resultat": {
+        "type": "string"
+        },
+        "intitule": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "resultat",
+        "intitule"
+        ]
+        },
+        "consultations": {
+        "type": "object",
+        "properties": {
+        "date": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "date"
+        ]
+        },
+        "statut": {
+        "type": "object",
+        "properties": {
+        "statutInfection": {
+        "type": "object",
+        "properties": {
+        "valeur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "valeur"
+        ]
+        },
+        "statutImmunisation": {
+        "type": "object",
+        "properties": {
+        "valeur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "valeur"
+        ]
+        },
+        "statutVaccination": {
+        "type": "object",
+        "properties": {
+        "valeur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "valeur"
+        ]
+        }
+        },
+        "required": [
+        "statutInfection",
+        "statutImmunisation",
+        "statutVaccination"
+        ]
+        }
+        },
+        "required": [
+        "hospitalisations",
+        "tests",
+        "consultations",
+        "statut"
+        ]
+        },
+        "historiqueSocial": {
+        "type": "object",
+        "properties": {
+        "etablissement": {
+        "type": "object",
+        "properties": {
+        "-refeta": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-refeta"
+        ]
+        },
+        "evenement": {
+        "type": "object",
+        "properties": {
+        "-refevent": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-refevent"
+        ]
+        }
+        },
+        "required": [
+        "etablissement",
+        "evenement"
+        ]
+        }
+        },
+        "required": [
+        "-idC",
+        "informationsPersonnelles",
+        "antecedentsMedicaux",
+        "historiqueSocial"
+        ]
+        },
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        },
+        "informationsPersonnelles": {
+        "type": "object",
+        "properties": {
+        "Nom": {
+        "type": "string"
+        },
+        "Prenom": {
+        "type": "string"
+        },
+        "dateDeNaissance": {
+        "type": "string"
+        },
+        "poids": {
+        "type": "string"
+        },
+        "age": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "Nom",
+        "Prenom",
+        "dateDeNaissance",
+        "poids",
+        "age"
+        ]
+        },
+        "antecedentsMedicaux": {
+        "type": "object",
+        "properties": {
+        "hospitalisations": {
+        "type": "object",
+        "properties": {
+        "maladie": {
+        "type": "string"
+        },
+        "dateEntree": {
+        "type": "string"
+        },
+        "dateSortie": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "maladie",
+        "dateEntree",
+        "dateSortie"
+        ]
+        },
+        "tests": {
+        "type": "object",
+        "properties": {
+        "resultat": {
+        "type": "string"
+        },
+        "intitule": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "resultat",
+        "intitule"
+        ]
+        },
+        "statut": {
+        "type": "object",
+        "properties": {
+        "statutInfection": {
+        "type": "object",
+        "properties": {
+        "valeur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "valeur"
+        ]
+        },
+        "statutImmunisation": {
+        "type": "object",
+        "properties": {
+        "valeur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "valeur"
+        ]
+        },
+        "statutVaccination": {
+        "type": "object",
+        "properties": {
+        "valeur": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "valeur"
+        ]
+        }
+        },
+        "required": [
+        "statutInfection",
+        "statutImmunisation",
+        "statutVaccination"
+        ]
+        }
+        },
+        "required": [
+        "hospitalisations",
+        "tests",
+        "statut"
+        ]
+        }
+        },
+        "required": [
+        "-idC",
+        "informationsPersonnelles",
+        "antecedentsMedicaux"
+        ]
+        }
+        ]
+        }
+        },
+        "required": [
+        "citoyen"
+        ]
+        },
+        "lieux": {
+        "type": "object",
+        "properties": {
+        "lieu": {
+        "type": "array",
+        "items": [
+        {
+        "type": "object",
+        "properties": {
+        "-refeta": {
+        "type": "string"
+        },
+        "affluence": {
+        "type": "string"
+        },
+        "adresse": {
+        "type": "string"
+        },
+        "ville": {
+        "type": "string"
+        },
+        "listePrésent": {
+        "type": "object"
+        }
+        },
+        "required": [
+        "-refeta",
+        "affluence",
+        "adresse",
+        "ville",
+        "listePrésent"
+        ]
+        },
+        {
+        "type": "object",
+        "properties": {
+        "-refeta": {
+        "type": "string"
+        },
+        "affluence": {
+        "type": "string"
+        },
+        "adresse": {
+        "type": "string"
+        },
+        "ville": {
+        "type": "string"
+        },
+        "listePrésent": {
+        "type": "object",
+        "properties": {
+        "citoyen": {
+        "type": "array",
+        "items": [
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-idC"
+        ]
+        },
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-idC"
+        ]
+        }
+        ]
+        }
+        },
+        "required": [
+        "citoyen"
+        ]
+        }
+        },
+        "required": [
+        "-refeta",
+        "affluence",
+        "adresse",
+        "ville",
+        "listePrésent"
+        ]
+        }
+        ]
+        }
+        },
+        "required": [
+        "lieu"
+        ]
+        },
+        "events": {
+        "type": "object",
+        "properties": {
+        "event": {
+        "type": "array",
+        "items": [
+        {
+        "type": "object",
+        "properties": {
+        "-idevent": {
+        "type": "string"
+        },
+        "date": {
+        "type": "string"
+        },
+        "affluence": {
+        "type": "string"
+        },
+        "adresse": {
+        "type": "string"
+        },
+        "ville": {
+        "type": "string"
+        },
+        "listePrésent": {
+        "type": "object",
+        "properties": {
+        "citoyen": {
+        "type": "array",
+        "items": [
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-idC"
+        ]
+        },
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-idC"
+        ]
+        }
+        ]
+        }
+        },
+        "required": [
+        "citoyen"
+        ]
+        }
+        },
+        "required": [
+        "-idevent",
+        "date",
+        "affluence",
+        "adresse",
+        "ville",
+        "listePrésent"
+        ]
+        },
+        {
+        "type": "object",
+        "properties": {
+        "-idevent": {
+        "type": "string"
+        },
+        "date": {
+        "type": "string"
+        },
+        "affluence": {
+        "type": "string"
+        },
+        "adresse": {
+        "type": "string"
+        },
+        "ville": {
+        "type": "string"
+        },
+        "listePrésent": {
+        "type": "object",
+        "properties": {
+        "citoyen": {
+        "type": "array",
+        "items": [
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-idC"
+        ]
+        },
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-idC"
+        ]
+        },
+        {
+        "type": "object",
+        "properties": {
+        "-idC": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "-idC"
+        ]
+        }
+        ]
+        }
+        },
+        "required": [
+        "citoyen"
+        ]
+        }
+        },
+        "required": [
+        "-idevent",
+        "date",
+        "affluence",
+        "adresse",
+        "ville",
+        "listePrésent"
+        ]
+        }
+        ]
+        }
+        },
+        "required": [
+        "event"
+        ]
+        },
+        "indicateurDeSanté": {
+        "type": "object",
+        "properties": {
+        "-indicateur": {
+        "type": "string"
+        },
+        "indicateur": {
+        "type": "object",
+        "properties": {
+        "domaine": {
+        "type": "string"
+        },
+        "pourcentage": {
+        "type": "string"
+        }
+        },
+        "required": [
+        "domaine",
+        "pourcentage"
+        ]
+        }
+        },
+        "required": [
+        "-indicateur",
+        "indicateur"
+        ]
+        }
+        },
+        "required": [
+        "citoyens",
+        "lieux",
+        "events",
+        "indicateurDeSanté"
+        ]
+        }
+        },
+        "required": [
+        "-xmlns",
+        "-xmlns:xsi",
+        "-xsi:schemaLocation",
+        "agenceGouvernement",
+        "ObservatoireMondial"
+        ]
+        }
+        },
+        "required": [
+        "BigVir"
+        ]
+        }
