@@ -11,14 +11,14 @@
             </head>
 
             <body>
-                <h3>Voici un recensement des citoyens ayant le même médécin</h3>
-                <ul>
+                <h3> <xsl:value-of select="count(./observatoire-mondial/citoyens/citoyen/antecedents-medicaux[count(consultations)>0])"/>
+                    citoyens ont eu à consulter un médécin</h3>
 
-                    <xsl:for-each select="./agence-gouvernementale/agents/medecin">
-                        <xsl:if test="count(./p)"
-                    </xsl:for-each>
+                <h3> <xsl:value-of select="count(./observatoire-mondial/citoyens/citoyen/antecedents-medicaux[count(hospitalisations)>0])"/>
+                    citoyens ont eu à se faire hospitaliser</h3>
 
-                </ul>
+
+
 
 
 
