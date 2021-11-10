@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Afficher les établissements qui ont été visité ou pas, ainsi que les noms des citoyens qui l'ont visité-->
+<!-- Afficher uniquement les établissements qui ont été visité, ainsi que les noms des citoyens qui l'ont visité-->
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="xml" indent="yes"/>
@@ -11,6 +11,16 @@
             </head>
             <body>
                 <h2>Les établissements qui ont été visité sont:</h2>
+
+                <xsl:for-each select="./observatoire-mondial/lieux/lieu">
+
+                </xsl:for-each>
+
+
+
+
+
+
                 <p>
                     - "<xsl:value-of select="observatoire-mondial/lieux/lieu[@refeta=1]/Type"/>" a été visité par:
                     <xsl:for-each select="./observatoire-mondial/citoyens/citoyen">

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Afficher le nombre de citoyens qui ont été hospitalisés -->
-<!-- Afficher pour chaque citoyen, son nombre d'hospitalisation -->
+
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="xml" indent="yes"/>
@@ -12,9 +11,10 @@
             </head>
 
             <body>
+                <!-- Afficher le nombre de citoyens qui ont été hospitalisés -->
                 <h3> <xsl:value-of select="count(./observatoire-mondial/citoyens/citoyen/antecedents-medicaux[count(hospitalisations) > 0])"/> CITOYENS ont déjà été hospitalisées!
                 </h3>
-
+                <!-- Afficher chaque citoyen et son nombre d'hospitalistations; dans l'ordre croissant -->
                 <xsl:for-each select="./observatoire-mondial/citoyens/citoyen">
                     <xsl:sort select="count(./antecedents-medicaux/hospitalisations)"/>
                     <p>
@@ -30,6 +30,7 @@
 
                         <p>
                             <xsl:if test="count(./antecedents-medicaux/hospitalisations) > 1">
+                                <!-- Afficher pour un citoyen dont le nombre d'hospitalisations est supérieure à 2, la liste de ses hospitalisations de la plus récente à la plus ancienne -->
                                 Ses hospitalisations classées de la plus récente à la plus ancienne sont: <br/>
                                 <xsl:for-each select="./antecedents-medicaux/hospitalisations">
                                     <xsl:sort select="dateEntree" data-type="number" order="ascending"/>
